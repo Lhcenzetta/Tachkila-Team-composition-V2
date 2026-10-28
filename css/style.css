@@ -1,3 +1,11 @@
+body {
+    background-image: url("/icons/Futuristic\ Neon\ Football\ Stadium\ Backdrop.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
 #modaljoueur.openclose {
     display: flex;
 }

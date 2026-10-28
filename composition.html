@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Tachkila</title>
+</head>
+
+<body class="grid min-h-screen lg:grid-cols-[minmax(280px,25%)_minmax(0,1fr)] lg:grid-rows-[auto_1fr] bg-[#0e1729]">
+    <header
+    class="col-span-full flex flex-wrap items-center justify-between gap-4 border-b border-[#a5c4f7]/30 bg-[#202c40] px-4 py-3 sm:px-6 fixed">
+    <div class="flex items-center gap-3">
+        <div
+            class="flex h-10 w-10 items-center justify-center rounded-full border border-green-500 bg-green-500/40 text-xl">
+            ⚽</div>
+        <h1 class="text-2xl font-extrabold tracking-wide text-white sm:text-3xl">TACHKILA</h1>
+    </div>
+    <nav id="navbar-sticky" class="flex w-full items-center justify-center md:w-auto">
+        <ul
+            class="flex flex-wrap items-center gap-2 rounded-lg border border-[#a5c4f7]/40 p-1 text-sm font-medium sm:gap-4 sm:p-2">
+            <li> <a href="/index.html" class=" block rounded  px-3 py-1.5 text-white transition hover:bg-green-700" >Effectif</a></li>
+            <li> <a href="/composition.html" class=" lien-actif block rounded bg-green-600 px-3 py-1.5 text-white transition hover:bg-green-600" >Composition</a> </li>
+            <li> <a href="/matchs.html" class="block rounded px-3 py-1.5 text-white transition hover:bg-green-600">Matchs</a> </li>
+        </ul>
+    </nav>
+
+    <div class="flex flex-wrap items-center gap-4 text-xs font-bold sm:text-sm">
+        <div class="flex items-center gap-1.5 text-orange-400">
+            <span class="h-2.5 w-2.5 rounded-full bg-orange-400"></span>GB
+        </div>
+        <div class="flex items-center gap-1.5 text-blue-400">
+            <span class="h-2.5 w-2.5 rounded-full bg-blue-600"></span>DEF
+        </div>
+        <div class="flex items-center gap-1.5 text-green-400">
+            <span class="h-2.5 w-2.5 rounded-full bg-green-400"></span>MIL
+        </div>
+        <div class="flex items-center gap-1.5 text-red-400">
+            <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>ATT
+        </div>
+    </div>
+    </header>
+
+    <aside class="bg-[#202c40] border-r border-[#a5c4f7] p-6">
+            <button id="Btn-add"
+                class="flex h-[58px] w-full items-center justify-center rounded-[14px] bg-green-400 text-lg font-bold transition hover:bg-green-400/80 ">
+                + Ajouter un joueur </button>
+            <div class="mb-4 mt-6 flex items-center justify-between">
+                <h2 class="text-white font-bold">Effectif</h2>
+                <span id="playerCount"
+                    class=" text-white rounded-xl border border-[#34445f] bg-[#111b30] px-3 py-1.5 text-sm font-semibold"></span>
+            </div>
+            <p class="max-w-[380px] mb-4 text-[14px]  text-[#8cb5de]"> Cliquez sur un joueur placé pour voir sa case sur le
+                terrain. pour modifier, pour supprimer.</p>
+            <div id="joueur"
+                class="flex-col rounded-xl border border-dashed border-[#465775] p-5 text-center text-sm text-[#93b4d8]">
+                <p class="flex justify-center hidden">Aucun joueur pour le moment</p>
+            </div>
+    </aside>
+        
+    <main id="main" class="relative bg-[#0e1729] p-2 sm:p-4 lg:p-6">
+            <div class="terrain-wrapper">
+                <section class="terain">
+                    <div class="case gk">
+                        <div class="num">1</div>
+                        <div class="info">
+                            <span class="role">GB</span>
+                            <span class="name">Libre</span>
+                        </div>
+                    </div>
+                    <div class="case post def dg"><span class="pos">DG</span><span class="status p-dg">Libre</span></div>
+                    <div class="case post def dc1"><span class="pos">DC</span><span class="status p-dc1">Libre</span></div>
+                    <div class="case post def dc2"><span class="pos">DC</span><span class="status p-dc2">Libre</span></div>
+                    <div class="case post def dd"><span class="pos ">DD</span><span class="status p-dd">Libre</span></div>
+                    <div class="case post mid mg"><span class="pos ">MG</span><span class="status p-mg">Libre</span></div>
+                    <div class="case post mid mc1"><span class="pos ">MC</span><span class="status p-mc1">Libre</span></div>
+                    <div class="case post mid mc2"><span class="pos ">MC</span><span class="status p-mc2">Libre</span></div>
+                    <div class="case post mid md"><span class="pos ">MD</span><span class="status p-md">Libre</span></div>
+                    <div class="case post att bu1"><span class="pos ">BU</span><span class="status p-bu1">Libre</span></div>
+                    <div class="case post att bu2"><span class="pos ">BU</span><span class="status p-bu2">Libre</span></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                    <div class="case"></div>
+                </section>
+                <div id="notification"
+                    class="fixed right-3 top-3 z-[60] hidden max-w-[calc(100vw-24px)] rounded-xl border-l-4 border-green-500 bg-green-100 p-4 shadow-lg sm:right-6 sm:top-6">
+                    <p id="message" class="text-green-700"></p>
+                </div>
+            </div>
+    </main>
+        
+    <div id="modaljoueur"
+            class="fixed left-1/2 top-1/2 z-50 hidden max-h-[90dvh] w-[calc(100%-24px)] max-w-[520px] -translate-x-1/2 -translate-y-1/2 flex-col gap-5 overflow-y-auto rounded-2xl border border-slate-600 bg-[#202c40] p-4 text-white shadow-2xl sm:gap-6 sm:p-8">
+            <div class="flex justify-between items-center">
+                <h2 id="title" class="text-2xl font-bold">Ajouter le joueur</h2>
+                <button id="btnClose" class="text-gray-400 text-2xl">&#215;</button>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="text-gray-400">Nom complet</label>
+                <input id='nomplayer' type="text"
+                    class="bg-slate-900 border border-slate-600 rounded-xl p-4 outline-none focus:border-blue-500">
+                <div id="error" class=" hidden border-l-1 border-red-500 bg-red-400 p-1 rounded">
+                    <p class="text-red-700">Chox invalid</p>
+                </div>
+            </div>
+            <div class="flex flex-col gap-3">
+                <label class="text-gray-400">Poste</label>
+                <div class="grid grid-cols-2 gap-3">
+                    <label
+                        class="flex-1 flex items-center gap-3 bg-slate-900 border border-yellow-500 rounded-xl p-4 cursor-pointer">
+                        <input type="radio" class="post" name="post" value="Gardien"> Gardien </label>
+                    <label
+                        class="flex-1 flex items-center gap-3 bg-slate-900 border rounded-xl border-blue-500 p-4 cursor-pointer">
+                        <input type="radio" class="post" name="post" value="Défenseur"> Défenseur </label>
+                    <label
+                        class="flex-1 flex items-center gap-3 bg-slate-900 border rounded-xl border-orange-500 p-4 cursor-pointer">
+                        <input type="radio" class="post" name="post" value="Milieu"> Milieu </label>
+                    <label
+                        class="flex-1 flex items-center gap-3 bg-slate-900 border rounded-xl p-4 border-red-500 cursor-pointer">
+                        <input type="radio" class="post" name="post" value="Attaquant"> Attaquant </label>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-400">Numéro (1 à 99)</label>
+                    <input id='numplayer' type="number" min="1" max="99" value="1"
+                        class="bg-slate-900 border border-slate-600 rounded-xl p-4 outline-none">
+                </div>
+                <div class="flex justify-end gap-3 mt-2 ">
+                    <button id="Annuler-btn" class="bg-slate-700 px-6 py-3 rounded-xl">Annuler</button>
+                    <button id="save-btn" class="bg-green-600 px-6 py-3 rounded-xl ">Enregistrer</button>
+                </div>
+            </div>
+    </div>
+        
+    <div id="modal-confirmation" class="fixed hidden inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div class="bg-white rounded-lg shadow-xl w-full max-w-sm mx-4 p-6">
+                <h3 class="text-lg font-medium text-gray-900">Supprimer</h3>
+                <p class="mt-2 text-sm text-gray-500">vous-Êtes sûr ?</p>
+                <div class="mt-6 flex justify-end gap-3">
+                    <button id="Annuler-confirmation" class="px-4 py-2  text-gray-700 border rounded-md hover:bg-gray-50">
+                        Annuler </button>
+                    <button id="confirmedelete" class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"> Confirmer
+                    </button>
+                </div>
+            </div>
+    </div>
+</body>

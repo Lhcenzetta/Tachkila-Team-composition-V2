@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Tachkila</title>
+</head>
+
+<body class="grid min-h-screen lg:grid-cols-[minmax(280px,25%)_minmax(0,1fr)] lg:grid-rows-[auto_1fr] bg-[#0e1729]">
+<header class="col-span-full flex flex-wrap items-center justify-between gap-4 border-b border-[#a5c4f7]/30 bg-[#202c40] px-4 py-3 sm:px-6 ">
+    <div class="flex items-center gap-3">
+        <div
+            class="flex h-10 w-10 items-center justify-center rounded-full border border-green-500 bg-green-500/40 text-xl">
+            ⚽</div>
+        <h1 class="text-2xl font-extrabold tracking-wide text-white sm:text-3xl">TACHKILA</h1>
+    </div>
+    <nav id="navbar-sticky" class="flex w-full items-center justify-center md:w-auto">
+        <ul
+            class="flex flex-wrap items-center gap-2 rounded-lg border border-[#a5c4f7]/40 p-1 text-sm font-medium sm:gap-4 sm:p-2">
+            <li> <a href="/index.html"
+                    class=" block rounded  px-3 py-1.5 text-white transition hover:bg-green-700">Effectif</a></li>
+            <li> <a href="/composition.html"
+                    class=" block rounded  px-3 py-1.5 text-white transition hover:bg-green-600">Composition</a>
+            </li>
+            <li> <a href="/matchs.html"
+                    class="block lien-actif bg-green-600 rounded px-3 py-1.5 text-white transition hover:bg-green-600">Matchs</a> </li>
+        </ul>
+    </nav>
+
+    <div class="flex flex-wrap items-center gap-4 text-xs font-bold sm:text-sm">
+        <div class="flex items-center gap-1.5 text-orange-400">
+            <span class="h-2.5 w-2.5 rounded-full bg-orange-400"></span>GB
+        </div>
+        <div class="flex items-center gap-1.5 text-blue-400">
+            <span class="h-2.5 w-2.5 rounded-full bg-blue-600"></span>DEF
+        </div>
+        <div class="flex items-center gap-1.5 text-green-400">
+            <span class="h-2.5 w-2.5 rounded-full bg-green-400"></span>MIL
+        </div>
+        <div class="flex items-center gap-1.5 text-red-400">
+            <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>ATT
+        </div>
+    </div>
+</header>
+</body>
