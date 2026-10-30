@@ -1,6 +1,7 @@
 const JoueursDispo = document.querySelector("#joueur")
-
 import { Joueurs, posts } from "./stockage.js";
+
+
 function AfficheJoueur(player) {
     const cardj = document.createElement("div");
     if (player.position === "Gardien")
@@ -54,31 +55,61 @@ function AfficheJoueur(player) {
     imgDelete.alt = "Supprimer";
     btnDelete.append(imgDelete);
 
-    playertop.append(playernum, playerinfo, btnEdit, btnDelete);
+    playertop.append(playernum, playerinfo);
 
-    const playerselect = document.createElement("select");
-    playerselect.classList.add("player-select");
+    const age = document.createElement("p");
+    age.classList.add("player-age");
+    age.textContent = `Âge : ${player.age} ans`;
+    const bottom = document.createElement("div");
+    bottom.classList.add("player-bottom");
 
-    posts.forEach(texte => {
-        const option = document.createElement("option");
-        option.textContent = texte;
-        playerselect.append(option);
-    });
-    playerselect.value = player.poste;
-    // playerselect.addEventListener("change", () => {
-    //     assingJoueur(player, playerselect)
-    // });
+    const statut = document.createElement("span");
+    statut.classList.add("player-status");
+    statut.textContent = player.statut;
+    if (player.statut === "Blessé") {
+        statut.classList.add("blesse");
+    }
 
-    cardj.append(playertop, playerselect);
-    // DeleteJoueur(btnDelete, cardj, player)
-    // modifierJouer(btnEdit, player)
+    const btnCaptain = document.createElement("button");
+    btnCaptain.type = "button";
+    btnCaptain.classList.add("captain-btn");
+    btnCaptain.textContent = "C";
+    if (player.capitaine) {
+        btnCaptain.classList.add("active");
+        const badge = document.createElement("span");
+        badge.classList.add("captain-badge");
+        badge.textContent = "C";
+        cardj.append(badge);
+    }
+    const actions = document.createElement("div");
+    actions.classList.add("player-actions");
+    actions.append(btnCaptain, btnEdit, btnDelete);
+
+    bottom.append(statut, actions);
+
+    cardj.append(playertop, age, bottom);
+
+    // DeleteJoueur(btnDelete, cardj, player);
+    // modifierJouer(btnEdit, player);
+
     return cardj;
 }
-
 export function afficherJoueurs() {
-    JoueursDispo.textContent = "";
+    JoueursDispo.textContent = ""
     Joueurs.forEach(joueur => {
         JoueursDispo.append(AfficheJoueur(joueur));
     });
 }
 afficherJoueurs()
+
+
+// btnCaptain.addEventListener("click", () => {
+
+//     const nouveauCapitaine = !player.capitaine;
+
+//     Joueurs.forEach(j => {
+//         j.capitaine = nouveauCapitaine && j.id === player.id;
+//     });
+//     localStorage.setItem(key, JSON.stringify(Joueurs));
+//     afficherJoueurs();
+// });

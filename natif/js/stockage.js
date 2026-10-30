@@ -1,5 +1,11 @@
 export const Joueurs = [
-    { id: 1, nom: "lait-zet", numéro: 5, poste: "Sur le banc", position: "Défenseur" }];
+    { id: 1, nom: "lait-zet", numéro: 5, poste: "Sur le banc", position: "Défenseur" },
+    // { id: 1, nom: "lait-zet", numéro: 5, poste: "Sur le banc", position: "Défenseur" },
+    // { id: 1, nom: "lait-zet", numéro: 5, poste: "Sur le banc", position: "Défenseur" },
+    // { id: 1, nom: "lait-zet", numéro: 5, poste: "Sur le banc", position: "Défenseur" },
+    // { id: 1, nom: "lait-zet", numéro: 5, poste: "Sur le banc", position: "Défenseur" },
+    // { id: 1, nom: "lait-zet", numéro: 5, poste: "Sur le banc", position: "Défenseur" }
+];
 export const posts = [
     "Sur le banc",
     "GB - Gardien",
