@@ -358,22 +358,36 @@
 
 
 import { AjouterJoueur } from "./natif/js/ajouter.js";
-const btn = document.querySelector("#Btn-add");
+const btn = document.querySelector("#Btn-Ajouter");
 const btnColose = document.querySelector("#btnClose");
 const annulerbtn = document.querySelector("#Annuler-btn")
-const save_btn = document.getElementById("save-btn")
-console.log(save_btn)
-save_btn.addEventListener("click", AjouterJoueur)
+const save_btn = document.querySelector("#save-btn")
+
+
 
 btn.addEventListener("click", () => {
     const title = document.querySelector("#title")
     title.textContent = "Ajouter le Joueur"
     modaljoueur.classList.toggle("openclose");
 })
-
+save_btn.addEventListener("click", AjouterJoueur)
 btnColose.addEventListener("click", () => {
     modaljoueur.classList.toggle("openclose");
 })
 annulerbtn.addEventListener("click", () => {
     modaljoueur.classList.remove("openclose")
 })
+
+// const listeJoueurs = document.querySelector("#joueur");
+// document.querySelector("#nextPlayers").addEventListener("click", () => {
+//     listeJoueurs.scrollBy({
+//         left: 300,
+//         behavior: "smooth"
+//     });
+// });
+// document.querySelector("#prevPlayers").addEventListener("click", () => {
+//     listeJoueurs.scrollBy({
+//         left: -300,
+//         behavior: "smooth"
+//     });
+// });
