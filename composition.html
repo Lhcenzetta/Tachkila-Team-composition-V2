@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js" defer></script>
+    <!-- <script type="module" src="script.js" defer></script> -->
     <link rel="stylesheet" href="/css/style.css">
+    
     <title>Tachkila</title>
 </head>
 
 <body class="grid min-h-screen lg:grid-cols-[minmax(280px,25%)_minmax(0,1fr)] lg:grid-rows-[auto_1fr] bg-[#0e1729]">
-    <header
-    class="col-span-full flex flex-wrap items-center justify-between gap-4 border-b border-[#a5c4f7]/30 bg-[#202c40] px-4 py-3 sm:px-6 fixed">
+    <header class="col-span-full flex flex-wrap items-center justify-between gap-4 border-b border-[#a5c4f7]/30 bg-[#202c40] px-4 py-3 sm:px-6">
     <div class="flex items-center gap-3">
         <div
             class="flex h-10 w-10 items-center justify-center rounded-full border border-green-500 bg-green-500/40 text-xl">
@@ -45,9 +45,6 @@
     </header>
 
     <aside class="bg-[#202c40] border-r border-[#a5c4f7] p-6">
-            <button id="Btn-add"
-                class="flex h-[58px] w-full items-center justify-center rounded-[14px] bg-green-400 text-lg font-bold transition hover:bg-green-400/80 ">
-                + Ajouter un joueur </button>
             <div class="mb-4 mt-6 flex items-center justify-between">
                 <h2 class="text-white font-bold">Effectif</h2>
                 <span id="playerCount"
