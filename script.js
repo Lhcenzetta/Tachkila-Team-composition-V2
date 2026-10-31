@@ -358,12 +358,12 @@
 
 
 import { AjouterJoueur } from "./natif/js/ajouter.js";
+import { searchPlayer } from "./natif/js/search_joueurs.js";
 const btn = document.querySelector("#Btn-Ajouter");
 const btnColose = document.querySelector("#btnClose");
 const annulerbtn = document.querySelector("#Annuler-btn")
 const save_btn = document.querySelector("#save-btn")
-
-
+export const searchplayer = document.querySelector("#searchPlayer")
 
 btn.addEventListener("click", () => {
     const title = document.querySelector("#title")
@@ -377,17 +377,21 @@ btnColose.addEventListener("click", () => {
 annulerbtn.addEventListener("click", () => {
     modaljoueur.classList.remove("openclose")
 })
+searchplayer.addEventListener("change", searchPlayer)
 
-// const listeJoueurs = document.querySelector("#joueur");
-// document.querySelector("#nextPlayers").addEventListener("click", () => {
-//     listeJoueurs.scrollBy({
-//         left: 300,
-//         behavior: "smooth"
-//     });
-// });
-// document.querySelector("#prevPlayers").addEventListener("click", () => {
-//     listeJoueurs.scrollBy({
-//         left: -300,
-//         behavior: "smooth"
-//     });
-// });
+
+const listeJoueurs = document.querySelector("#joueur");
+document.querySelector("#nextPlayers").addEventListener("click", () => {
+    listeJoueurs.scrollBy({
+        left: 300,
+        behavior: "smooth"
+    });
+});
+
+
+document.querySelector("#prevPlayers").addEventListener("click", () => {
+    listeJoueurs.scrollBy({
+        left: -300,
+        behavior: "smooth"
+    });
+});
