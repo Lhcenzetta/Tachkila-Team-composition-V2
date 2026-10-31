@@ -1,6 +1,7 @@
 import { valide_input_name, afficherMessage } from "./validation.js";
 import { Joueurs , refresh } from "./stockage.js";
 import { afficherJoueurs } from "./interface.js";
+import { pagination } from "./pagination.js";
 const modaljoueur = document.querySelector("#modaljoueur")
 const playerCount = document.querySelector("#playerCount")
 
@@ -32,8 +33,9 @@ export function AjouterJoueur() {
 
     }
     else if (valid && !selectedPost) {
-        afficherMessage("Veuillez selectionner une position !", false);
+       afficherMessage("Veuillez selectionner une position !", false);
     }
+    pagination()
     refresh()
     // playerCount.textContent = Joueurs.length + " joueur(s)"
     console.log(Joueurs)

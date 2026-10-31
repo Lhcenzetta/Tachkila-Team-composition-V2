@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="script.js" defer></script>
+    <!-- <script src="/natif/js/joueurs.js" defer></script> -->
     <link rel="stylesheet" href="/css/style.css">
 
     <title>Tachkila</title>
@@ -60,6 +61,14 @@
     <div id="joueur" class="flex ">
         <p class="flex justify-center hidden">Aucun joueur pour le moment</p>
     </div>
+    
+    <div class="flex flex-wrap items-center justify-center gap-[10px] mt-[25px]">
+        <button id="prevPage" class="px-[15px] py-[10px] bg-slate-800 border border-slate-600 rounded-lg text-white text-sm cursor-pointer hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed"> ❮ Précédent </button>
+        <div id="pageNumbers" class="flex gap-2"></div>
+        <button id="nextPage" class="px-[15px] py-[10px] bg-slate-800 border border-slate-600 rounded-lg text-white text-sm cursor-pointer hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed">Suivant ❯ </button>
+    </div>
+    <p id="pageInfo" class="mt-3 text-center text-slate-400 text-[13px]"></p>
+
 
     <div id="modaljoueur" class="fixed left-1/2 top-1/2 z-50 hidden w-[calc(100%-24px)] max-w-[640px] max-h-[90dvh] -translate-x-1/2 -translate-y-1/2 flex-col gap-7 overflow-y-auto rounded-[20px] border border-[#34445f] bg-[#1e293b] p-5 text-white shadow-2xl sm:p-8">
         <div class="flex items-center justify-between">
@@ -120,16 +129,7 @@
                 </div>
             </div>
     </div>
-    
-    <div class="flex justify-end gap-3 mb-3">
-        <button id="prevPlayers" type="button" class="rounded-lg bg-blue-900/70 px-4 py-2 text-white hover:bg-blue-700">
-            &#10094;
-        </button>
-    
-        <button id="nextPlayers" type="button" class="rounded-lg bg-blue-900/70 px-4 py-2 text-white hover:bg-blue-700">
-            &#10095;
-        </button>
-    </div>
+
     <div id="notification" class="fixed right-3 top-3 z-[60] hidden max-w-[calc(100vw-24px)] rounded-xl border-l-4 border-green-500 bg-green-100 p-4 shadow-lg sm:right-6 sm:top-6">
         <p id="message" class="text-green-700"></p>
     </div>
