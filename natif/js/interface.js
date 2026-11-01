@@ -1,8 +1,7 @@
-const JoueursDispo = document.querySelector("#joueur")
+export const JoueursDispo = document.querySelector("#joueur")
 import { Joueurs, posts } from "./stockage.js";
-
-
-function AfficheJoueur(player) {
+const pageNumbers = document.querySelector("#pageNumbers");
+export function AfficheJoueur(player) {
     const cardj = document.createElement("div");
     if (player.position === "Gardien")
         cardj.classList.add("CardJoueur-Gb");
@@ -88,7 +87,6 @@ function AfficheJoueur(player) {
     bottom.append(statut, actions);
 
     cardj.append(playertop, age, bottom);
-
     // DeleteJoueur(btnDelete, cardj, player);
     // modifierJouer(btnEdit, player);
 

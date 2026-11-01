@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <script type="module" src="script.js" defer></script> -->
+    <script type="module" src="script.js" defer></script>
     <link rel="stylesheet" href="/css/style.css">
     
     <title>Tachkila</title>
@@ -167,59 +167,4 @@
                 </div>
             </div>
     </main>
-        
-    <div id="modaljoueur"
-            class="fixed left-1/2 top-1/2 z-50 hidden max-h-[90dvh] w-[calc(100%-24px)] max-w-[520px] -translate-x-1/2 -translate-y-1/2 flex-col gap-5 overflow-y-auto rounded-2xl border border-slate-600 bg-[#202c40] p-4 text-white shadow-2xl sm:gap-6 sm:p-8">
-            <div class="flex justify-between items-center">
-                <h2 id="title" class="text-2xl font-bold">Ajouter le joueur</h2>
-                <button id="btnClose" class="text-gray-400 text-2xl">&#215;</button>
-            </div>
-            <div class="flex flex-col gap-2">
-                <label class="text-gray-400">Nom complet</label>
-                <input id='nomplayer' type="text"
-                    class="bg-slate-900 border border-slate-600 rounded-xl p-4 outline-none focus:border-blue-500">
-                <div id="error" class=" hidden border-l-1 border-red-500 bg-red-400 p-1 rounded">
-                    <p class="text-red-700">Chox invalid</p>
-                </div>
-            </div>
-            <div class="flex flex-col gap-3">
-                <label class="text-gray-400">Poste</label>
-                <div class="grid grid-cols-2 gap-3">
-                    <label
-                        class="flex-1 flex items-center gap-3 bg-slate-900 border border-yellow-500 rounded-xl p-4 cursor-pointer">
-                        <input type="radio" class="post" name="post" value="Gardien"> Gardien </label>
-                    <label
-                        class="flex-1 flex items-center gap-3 bg-slate-900 border rounded-xl border-blue-500 p-4 cursor-pointer">
-                        <input type="radio" class="post" name="post" value="Défenseur"> Défenseur </label>
-                    <label
-                        class="flex-1 flex items-center gap-3 bg-slate-900 border rounded-xl border-orange-500 p-4 cursor-pointer">
-                        <input type="radio" class="post" name="post" value="Milieu"> Milieu </label>
-                    <label
-                        class="flex-1 flex items-center gap-3 bg-slate-900 border rounded-xl p-4 border-red-500 cursor-pointer">
-                        <input type="radio" class="post" name="post" value="Attaquant"> Attaquant </label>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <label class="text-gray-400">Numéro (1 à 99)</label>
-                    <input id='numplayer' type="number" min="1" max="99" value="1"
-                        class="bg-slate-900 border border-slate-600 rounded-xl p-4 outline-none">
-                </div>
-                <div class="flex justify-end gap-3 mt-2 ">
-                    <button id="Annuler-btn" class="bg-slate-700 px-6 py-3 rounded-xl">Annuler</button>
-                    <button id="save-btn" class="bg-green-600 px-6 py-3 rounded-xl ">Enregistrer</button>
-                </div>
-            </div>
-    </div>
-        
-    <div id="modal-confirmation" class="fixed hidden inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div class="bg-white rounded-lg shadow-xl w-full max-w-sm mx-4 p-6">
-                <h3 class="text-lg font-medium text-gray-900">Supprimer</h3>
-                <p class="mt-2 text-sm text-gray-500">vous-Êtes sûr ?</p>
-                <div class="mt-6 flex justify-end gap-3">
-                    <button id="Annuler-confirmation" class="px-4 py-2  text-gray-700 border rounded-md hover:bg-gray-50">
-                        Annuler </button>
-                    <button id="confirmedelete" class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"> Confirmer
-                    </button>
-                </div>
-            </div>
-    </div>
 </body>

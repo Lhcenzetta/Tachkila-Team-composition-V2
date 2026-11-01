@@ -38,5 +38,5 @@ export function AjouterJoueur() {
     pagination()
     refresh()
     // playerCount.textContent = Joueurs.length + " joueur(s)"
-    console.log(Joueurs)
+  
 }
