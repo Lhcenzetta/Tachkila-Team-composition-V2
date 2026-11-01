@@ -26,7 +26,7 @@ export function afficherMessage(texte, success) {
 }
 
 
-export function valide_input_name(name, number, check_in) {
+export function valide_input_name(name, number, age, check_in) {
     let valid = true;
 
     if (name === "") {
@@ -39,6 +39,10 @@ export function valide_input_name(name, number, check_in) {
     }
     else if (number === "" || Number(number) < 1 || Number(number) > 99) {
         afficherMessage("Le numéro doit être entre 1 et 99 !", false);
+        valid = false;
+    }
+    else if (age === "" || Number(age) < 10 || Number(age) > 50) {
+        afficherMessage("L'age de jouer doit etre entre 10 and 49", false);
         valid = false;
     }
     else if (Joueurs.some(j => Number(j.numéro) === Number(number)) && check_in) {

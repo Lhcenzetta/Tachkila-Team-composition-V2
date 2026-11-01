@@ -358,22 +358,28 @@
 
 
 import { AjouterJoueur } from "./natif/js/ajouter.js";
-const btn = document.querySelector("#Btn-add");
+import { pagination } from "./natif/js/pagination.js";
+import { searchPlayer } from "./natif/js/search_joueurs.js";
+import { Joueurs } from "./natif/js/stockage.js";
+const btn = document.querySelector("#Btn-Ajouter");
 const btnColose = document.querySelector("#btnClose");
 const annulerbtn = document.querySelector("#Annuler-btn")
-const save_btn = document.getElementById("save-btn")
-console.log(save_btn)
-save_btn.addEventListener("click", AjouterJoueur)
-
+const save_btn = document.querySelector("#save-btn")
+// export const totalpages = Math.ceil(Joueurs.length / joueurspage);
+export const searchplayer = document.querySelector("#searchPlayer")
+export const pagenumbers = document.getElementById("pageNumbers");
 btn.addEventListener("click", () => {
     const title = document.querySelector("#title")
     title.textContent = "Ajouter le Joueur"
     modaljoueur.classList.toggle("openclose");
 })
-
+save_btn.addEventListener("click", AjouterJoueur)
 btnColose.addEventListener("click", () => {
     modaljoueur.classList.toggle("openclose");
 })
 annulerbtn.addEventListener("click", () => {
     modaljoueur.classList.remove("openclose")
 })
+searchplayer.addEventListener("change", searchPlayer)
+// afficherJoueurs();
+pagination()
