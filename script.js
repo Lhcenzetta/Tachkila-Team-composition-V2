@@ -87,7 +87,7 @@
 //     const span1 = document.createElement("span");
 //     span1.classList.add("player-name");
 //     span1.textContent = player.nom;
-    
+
 //     const span2 = document.createElement("span");
 //     if (player.position === "Gardien")
 //         span2.classList.add("player-post-GB");
@@ -164,7 +164,7 @@
 //         radio.checked = true;
 
 //         save_btn.removeEventListener("click", AjouterJoueur);
-        
+
 //         save_btn.onclick = () => {
 //             let newName = name.value.trim();
 //             let newNumber = number.value;
@@ -283,7 +283,7 @@
 //             else if (Joueurs[i].poste === "MD - Milieu droit")
 //                 md.textContent = Joueurs[i].nom;
 //         }
-            
+
 //         else if (Joueurs[i].position === "Attaquant") {
 
 //             if (Joueurs[i].poste === "BU - Buteur 1")
@@ -360,26 +360,37 @@
 import { AjouterJoueur } from "./natif/js/ajouter.js";
 import { pagination } from "./natif/js/pagination.js";
 import { searchPlayer } from "./natif/js/search_joueurs.js";
+import { filter } from "./natif/js/filtrage.js";
 import { Joueurs } from "./natif/js/stockage.js";
 const btn = document.querySelector("#Btn-Ajouter");
 const btnColose = document.querySelector("#btnClose");
 const annulerbtn = document.querySelector("#Annuler-btn")
 const save_btn = document.querySelector("#save-btn")
-// export const totalpages = Math.ceil(Joueurs.length / joueurspage);
+export const btns = document.querySelectorAll(".filter-btn")
 export const searchplayer = document.querySelector("#searchPlayer")
 export const pagenumbers = document.getElementById("pageNumbers");
+
+pagination()
+
 btn.addEventListener("click", () => {
     const title = document.querySelector("#title")
     title.textContent = "Ajouter le Joueur"
     modaljoueur.classList.toggle("openclose");
 })
+
+
 save_btn.addEventListener("click", AjouterJoueur)
+
+
 btnColose.addEventListener("click", () => {
     modaljoueur.classList.toggle("openclose");
 })
+
 annulerbtn.addEventListener("click", () => {
     modaljoueur.classList.remove("openclose")
 })
-searchplayer.addEventListener("change", searchPlayer)
-// afficherJoueurs();
-pagination()
+
+
+searchplayer.addEventListener("input", searchPlayer)
+
+filter()
