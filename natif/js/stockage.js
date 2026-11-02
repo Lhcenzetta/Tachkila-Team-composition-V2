@@ -15,8 +15,36 @@ export const posts = [
 
 export const key = "data-joueurs";
 
-export const Joueurs = JSON.parse(localStorage.getItem(key) || "[]");
-
+// export const Joueurs = [
+//     {
+//         id: 1,
+//         nom: "lait-zet",
+//         age: 33,
+//         numéro: 34,
+//         statut: "En forme",
+//         capitan : false,
+//         position: "Gardien"
+//     },
+//     {
+//         id: 2,
+//         nom: "ahmed",
+//         age: 33,
+//         numéro: 34,
+//         statut: "En forme",
+//         capitan: false,
+//         position: "Gardien"
+//     },
+//     {
+//         id: 3,
+//         nom: "ali",
+//         age: 33,
+//         numéro: 34,
+//         statut: "En forme",
+//         capitan: false,
+//         position: "Gardien"
+//     }
+// ];
+export const Joueurs = JSON.parse(localStorage.getItem(key) || "[]")
 export function refresh() {
     localStorage.setItem(key, JSON.stringify(Joueurs));
 }

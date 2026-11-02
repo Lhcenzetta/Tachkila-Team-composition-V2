@@ -349,6 +349,7 @@ body {
     padding: 15px 0;
 }
 .CardJoueur-Gb {
+    position: relative;
     margin-top: 10px;
     width: 100%;
     box-sizing: border-box;
@@ -361,6 +362,7 @@ body {
 }
 
 .CardJoueur-DF {
+    position: relative;
     margin-top: 10px;
     width: 100%;
     box-sizing: border-box;
@@ -373,6 +375,7 @@ body {
 }
 
 .CardJoueur-ME {
+    position: relative;
     margin-top: 10px;
     width: 100%;
     box-sizing: border-box;
@@ -385,6 +388,7 @@ body {
 }
 
 .CardJoueur-AT {
+    position: relative;
     margin-top: 10px;
     width: 100%;
     box-sizing: border-box;

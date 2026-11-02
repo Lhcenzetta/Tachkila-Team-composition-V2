@@ -25,7 +25,7 @@ export function AjouterJoueur() {
                 statut:statut,
                 position: selectedPost,
                 poste: "Sur le banc",
-                capitan :false
+                capitan : false
             });
         afficherJoueurs();
         modaljoueur.classList.remove("openclose");
