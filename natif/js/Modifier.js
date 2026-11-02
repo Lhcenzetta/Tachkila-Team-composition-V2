@@ -1,6 +1,6 @@
 import { Joueurs, refresh } from "./stockage.js";
 import { valide_input_name, afficherMessage } from "./validation.js";
-import { save_btn, } from "../../script.js";
+import { save_btn, } from "../../effectif.js";
 import { AjouterJoueur } from "./ajouter.js";
 import { afficherJoueurs } from "./interface.js";
 import { pagination } from "./pagination.js";

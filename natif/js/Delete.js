@@ -1,4 +1,4 @@
-import { confirmationModal ,AnnulerConfirmation} from "../../script.js";
+import { confirmationModal, AnnulerConfirmation } from "../../effectif.js";
 import { pagination } from "./pagination.js";
 import { Joueurs, refresh } from "./stockage.js";
 import { afficherMessage } from "./validation.js";

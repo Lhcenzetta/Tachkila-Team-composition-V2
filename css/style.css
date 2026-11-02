@@ -586,6 +586,170 @@ body {
 }
 
 
+
+
+#joueursComposition {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    color: white;
+}
+
+
+.comp-card.gb {
+    --accent: #fbbf24;
+}
+
+.comp-card.df {
+    --accent: #3b82f6;
+}
+
+.comp-card.me {
+    --accent: #22c55e;
+}
+
+.comp-card.at {
+    --accent: #ef4444;
+}
+
+
+/* .comp-card::before {
+    content: "";
+    position: absolute;
+    top: -70px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #3b82f644, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: stadiumLight 4s infinite alternate;
+} */
+
+.comp-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg,transparent, rgba(255, 255, 255, 0.08),transparent);
+    pointer-events: none;
+    animation: cardShine 7s infinite;
+}
+
+.comp-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(59, 130, 246, 0.25);
+}
+
+
+.comp-top {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+
+.comp-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    background: #0d1b38;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+
+    color: var(--accent);
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+.comp-name {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.comp-select {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 11px 12px;
+
+    background: #0b1830;
+    border: 1px solid #375579;
+    border-radius: 8px;
+
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+    color-scheme: dark;
+}
+
+.comp-select:focus {
+    border-color: var(--accent);
+}
+
+
+.comp-card.blesse {
+    border-left-color: #fb7185;
+    opacity: 0.75;
+}
+
+.comp-select:disabled {
+    background: #20283b;
+    color: #fb7185;
+    cursor: not-allowed;
+}
+
+
+@keyframes stadiumLight {
+    from {
+        opacity: 0.3;
+    }
+
+    to {
+        opacity: 0.9;
+    }
+}
+
+@keyframes cardShine {
+
+    0%,
+    65% {
+        left: -100%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .comp-card,
+    .comp-card::before,
+    .comp-card::after {
+        animation: none;
+        transition: none;
+    }
+}
 @media (max-width: 1024px) {
 
     #main {

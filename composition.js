@@ -1,42 +1,105 @@
+
+import { Joueurs, refresh } from "/natif/js/stockage.js";
+import { AssingeJeur, AffichierAssingPlayer } from "/natif/js/AssingeJoueur.js";
+
 const cardj = document.querySelector("#joueursComposition");
 
-import { Joueurs } from "./natif/js/stockage.js";
+
+const postes = {
+    Gardien: [
+        "GB - Gardien"
+    ],
+    Défenseur: [
+        "DG - Arrière gauche",
+        "DC - Défenseur central gauche",
+        "DC - Défenseur central droit",
+        "DD - Arrière droit"
+    ],
+    Milieu: [
+        "MG - Milieu gauche",
+        "MC - Milieu central gauche",
+        "MC - Milieu central droit",
+        "MD - Milieu droit"
+    ],
+    Attaquant: [
+        "BU - Buteur 1",
+        "BU - Buteur 2"
+    ]
+};
+
 function CarteComposition(player) {
     const card = document.createElement("div");
+    card.classList.add("comp-card");
 
-    card.className = "flex flex-rows items-center gap-2 p-2 bg-slate-800 border-2 rounded-lg text-white min-w-0";
-
-   
     if (player.position === "Gardien") {
-        card.classList.add("border-yellow-500");
+        card.classList.add("gb");
     }
     else if (player.position === "Défenseur") {
-        card.classList.add("border-blue-500");
+        card.classList.add("df");
     }
     else if (player.position === "Milieu") {
-        card.classList.add("border-green-500");
+        card.classList.add("me");
     }
     else {
-        card.classList.add("border-red-500");
+        card.classList.add("at");
     }
+
+    const top = document.createElement("div");
+    top.classList.add("comp-top");
+
     const numero = document.createElement("span");
-    numero.className = "font-bold shrink-0";
+    numero.classList.add("comp-number");
     numero.textContent = player.numéro;
+
     const nom = document.createElement("span");
-    nom.className = "text-xs font-semibold truncate";
+    nom.classList.add("comp-name");
     nom.textContent = player.nom;
 
-    card.append(numero, nom);
+    top.append(numero, nom);
 
-    if (player.capitaine) {
-        const capitaine = document.createElement("span");
-        capitaine.className = "text-purple-400 font-bold";
-        capitaine.textContent = "C";
 
-        card.append(capitaine);
+    const select = document.createElement("select");
+    select.classList.add("comp-select");
+
+    if (player.statut === "Blessé")
+    {
+        card.classList.add("blesse");
+
+        const option = document.createElement("option");
+        option.textContent = "Indisponible - Blessé";
+        option.value = "Indisponible";
+
+        select.append(option);
+        select.disabled = true;
     }
+    else
+    {
+        const banc = document.createElement("option");
+        banc.textContent = "Sur le banc";
+        banc.value = "Sur le banc";
+        select.append(banc);
+
+    
+        postes[player.position].forEach(poste => {
+            const option = document.createElement("option");
+            option.textContent = poste;
+            option.value = poste;
+
+            select.append(option);
+        });
+        select.value = player.poste;
+        select.value = player.poste || "Sur le banc";
+        select.addEventListener("change", () => {
+             AssingeJeur(player,select)
+        }) 
+        refresh();
+    }
+
+    card.append(top, select);
+
     return card;
 }
+
 function afficherJoueurs() {
     cardj.textContent = "";
 
@@ -44,6 +107,9 @@ function afficherJoueurs() {
         cardj.append(CarteComposition(joueur));
     });
 
-    document.querySelector("#playerCount").textContent = "Joueur " + Joueurs.length;
+    document.querySelector("#playerCount").textContent =
+        Joueurs.length;
 }
-afficherJoueurs()
+
+afficherJoueurs();
+AffichierAssingPlayer() 
