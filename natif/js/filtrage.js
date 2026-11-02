@@ -44,7 +44,6 @@ export function filter() {
                     b.classList.add("bg-slate-800/50", "text-slate-300");
                 }
             });
-
             pagination();
         });
     });

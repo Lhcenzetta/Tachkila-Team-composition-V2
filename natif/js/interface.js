@@ -1,6 +1,9 @@
 export const JoueursDispo = document.querySelector("#joueur")
+import { DeleteJoueur } from "./Delete.js";
 import { Joueurs, posts } from "./stockage.js";
+import { modifierJouer } from "./Modifier.js";
 const pageNumbers = document.querySelector("#pageNumbers");
+
 export function AfficheJoueur(player) {
     const cardj = document.createElement("div");
     if (player.position === "Gardien")
@@ -87,8 +90,8 @@ export function AfficheJoueur(player) {
     bottom.append(statut, actions);
 
     cardj.append(playertop, age, bottom);
-    // DeleteJoueur(btnDelete, cardj, player);
-    // modifierJouer(btnEdit, player);
+    DeleteJoueur(btnDelete, cardj, player);
+    modifierJouer(btnEdit, player);
 
     return cardj;
 }
