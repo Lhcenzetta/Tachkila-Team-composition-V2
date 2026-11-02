@@ -360,11 +360,11 @@ import { AjouterJoueur } from "./natif/js/ajouter.js";
 import { pagination } from "./natif/js/pagination.js";
 import { searchPlayer } from "./natif/js/search_joueurs.js";
 import { filter } from "./natif/js/filtrage.js";
-import { Joueurs } from "./natif/js/stockage.js";
+import { Joueurs, refresh } from "./natif/js/stockage.js";
 const btn = document.querySelector("#Btn-Ajouter");
 const btnColose = document.querySelector("#btnClose");
 const annulerbtn = document.querySelector("#Annuler-btn")
-const save_btn = document.querySelector("#save-btn")
+export const save_btn = document.querySelector("#save-btn")
 export const btns = document.querySelectorAll(".filter-btn")
 export const searchplayer = document.querySelector("#searchPlayer")
 export const pagenumbers = document.getElementById("pageNumbers");
@@ -395,3 +395,4 @@ annulerbtn.addEventListener("click", () => {
 searchplayer.addEventListener("input", searchPlayer)
 
 filter()
+
