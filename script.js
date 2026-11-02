@@ -30,9 +30,8 @@
 // const bu1 = document.querySelector(".p-bu1")
 // const bu2 = document.querySelector(".p-bu2")
 // const playerCount = document.querySelector("#playerCount")
-// const confirmationModal = document.querySelector("#modal-confirmation")
-// const confirmedelete = document.querySelector("#confirmedelete")
-// const AnnulerConfirmation = document.querySelector("#Annuler-confirmation")
+
+
 
 // function refresh() {
 //     const rs = localStorage.getItem(key);
@@ -369,7 +368,9 @@ const save_btn = document.querySelector("#save-btn")
 export const btns = document.querySelectorAll(".filter-btn")
 export const searchplayer = document.querySelector("#searchPlayer")
 export const pagenumbers = document.getElementById("pageNumbers");
-
+export const confirmationModal = document.querySelector("#modal-confirmation")
+export const confirmedelete = document.querySelector("#confirmedelete")
+export const AnnulerConfirmation = document.querySelector("#Annuler-confirmation")
 pagination()
 
 btn.addEventListener("click", () => {
