@@ -3,7 +3,7 @@ export const modalmatch = document.querySelector("#modalmatch")
 const BtnAjouter = document.querySelector("#Btn-Ajouter")
 import { AjouterMatch } from "./natif/js/AjouteMatch.js"
 import { Match } from "./natif/js/stockage.js"
-import { AfficherMatchCartes} from "./AfficherMatchDom.js"
+import { AfficherMatchCartes} from "./natif/js/AfficherMatchDom.js"
 const annulerbtn = document.querySelector("#Annuler-btn")
 const btnColose = document.querySelector("#btnClose");
 
