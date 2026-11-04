@@ -14,7 +14,12 @@ export const posts = [
 ];
 
 export const key = "data-joueurs";
+export const key1 = "data-match";
 export const Joueurs = JSON.parse(localStorage.getItem(key) || "[]")
+export const Match = JSON.parse(localStorage.getItem(key1) || "[]")
 export function refresh() {
     localStorage.setItem(key, JSON.stringify(Joueurs));
+}
+export function refresh1() {
+    localStorage.setItem(key1, JSON.stringify(Match));
 }

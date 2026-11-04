@@ -53,120 +53,151 @@
             class="text-white rounded-xl border border-[#34445f] bg-[#111b30] px-3 py-1.5 text-sm font-semibold">
         </span>
     </div>
-
 <div id="joueursComposition" class="flex flex-col gap-3 w-full rounded-xl border border-dashed border-[#465775] p-3">
 </div>
 
 </aside>
 
         
-    <main id="main" class="relative bg-[#0e1729] p-2 sm:p-4 lg:p-6">
-            <div class="terrain-wrapper">
-                <section class="terain">
-                    <div class="case gk">
-                        <div class="num">1</div>
-                        <div class="info">
-                            <span class="role">GB</span>
-                            <span class="name">Libre</span>
-                        </div>
-                    </div>
-                    <div class="case post def dg"><span class="pos">DG</span><span class="status p-dg">Libre</span></div>
-                    <div class="case post def dc1"><span class="pos">DC</span><span class="status p-dc1">Libre</span></div>
-                    <div class="case post def dc2"><span class="pos">DC</span><span class="status p-dc2">Libre</span></div>
-                    <div class="case post def dd"><span class="pos ">DD</span><span class="status p-dd">Libre</span></div>
-                    <div class="case post mid mg"><span class="pos ">MG</span><span class="status p-mg">Libre</span></div>
-                    <div class="case post mid mc1"><span class="pos ">MC</span><span class="status p-mc1">Libre</span></div>
-                    <div class="case post mid mc2"><span class="pos ">MC</span><span class="status p-mc2">Libre</span></div>
-                    <div class="case post mid md"><span class="pos ">MD</span><span class="status p-md">Libre</span></div>
-                    <div class="case post att bu1"><span class="pos ">BU</span><span class="status p-bu1">Libre</span></div>
-                    <div class="case post att bu2"><span class="pos ">BU</span><span class="status p-bu2">Libre</span></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                    <div class="case"></div>
-                </section>
-                <div id="notification"
-                    class="fixed right-3 top-3 z-[60] hidden max-w-[calc(100vw-24px)] rounded-xl border-l-4 border-green-500 bg-green-100 p-4 shadow-lg sm:right-6 sm:top-6">
-                    <p id="message" class="text-green-700"></p>
-                </div>
+<main id="main" class="relative min-w-0 bg-transparent p-2 sm:p-4 lg:p-6">
+
+    <div class="terrain-wrapper rounded-3xl border border-blue-400/20 bg-[#0b1730]/80 p-3 shadow-2xl backdrop-blur-sm sm:p-5">
+
+
+        <div class="mb-5 flex items-center justify-between gap-3">
+            <div>
+                <h2 class="text-lg font-bold text-white"> Composition d'équipe </h2>
+                <p class="text-xs text-slate-400"> Formation 4-4-2 </p>
             </div>
-    </main>
-</body>
+
+            <span class="rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-2 text-xs font-bold text-blue-300"> MATCH DAY </span>
+        </div>
+        <div class="overflow-x-auto rounded-2xl">
+            <section class="terain relative min-h-[560px] min-w-[700px]  rounded-2xl border-2 border-emerald-400/40 bg-gradient-to-r p-4 sm:min-h-[650px] lg:min-w-0">
+                <div class="pointer-events-none absolute -top-20 left-1/4 h-52 w-52 rounded-full bg-blue-300/10 blur-3xl animate-pulse">
+                </div>
+
+                <div class="pointer-events-none absolute -bottom-20 right-1/4 h-52 w-52 rounded-full bg-emerald-300/10 blur-3xl">
+                </div>
+
+                <div class="pointer-events-none absolute inset-4 rounded-lg border-2 border-white/25"></div>
+
+                <div class="pointer-events-none absolute left-1/2 top-4 bottom-4 w-px bg-white/30"></div>
+
+                <div
+                    class="pointer-events-none absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white/25">
+                </div>
+
+                <div
+                    class="pointer-events-none absolute left-4 top-1/4 h-1/2 w-[15%] border-2 border-l-0 border-white/25">
+                </div>
+
+
+                <div
+                    class="pointer-events-none absolute right-4 top-1/4 h-1/2 w-[15%] border-2 border-r-0 border-white/25">
+                </div>
+
+                <div
+                    class="case gk relative z-10 flex min-w-0 flex-col items-center justify-center gap-3 rounded-2xl border-2 border-amber-400/70 bg-amber-950/70 p-3 text-center text-white shadow-lg shadow-amber-500/10 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-amber-300 hover:shadow-amber-500/30">
+
+                    <div
+                        class="num flex h-14 w-14 items-center justify-center rounded-full border-2 border-amber-400 bg-amber-400/20 text-3xl font-black text-amber-300">
+                        1
+                    </div>
+
+                    <div class="info flex min-w-0 flex-col items-center gap-1">
+                        <span class="role text-xs font-bold uppercase tracking-widest text-amber-300">
+                            GB
+                        </span>
+                        <span class="name max-w-full truncate text-sm font-semibold">
+                            Libre
+                        </span>
+                    </div>
+                </div>
+
+                <div
+                    class="case post def dg relative z-10 flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border-2 border-blue-400/70 bg-blue-950/75 p-2 text-center text-white shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-blue-500/30">
+                    <span class="pos text-xs font-black tracking-wider text-blue-300">DG</span>
+                    <span class="status p-dg max-w-full truncate text-sm font-semibold">Libre</span>
+                </div>
+
+                <div
+                    class="case post def dc1 relative z-10 flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border-2 border-blue-400/70 bg-blue-950/75 p-2 text-center text-white shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-blue-500/30">
+                    <span class="pos text-xs font-black tracking-wider text-blue-300">DC</span>
+                    <span class="status p-dc1 max-w-full truncate text-sm font-semibold">Libre</span>
+                </div>
+
+                <div
+                    class="case post def dc2 relative z-10 flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border-2 border-blue-400/70 bg-blue-950/75 p-2 text-center text-white shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-blue-500/30">
+                    <span class="pos text-xs font-black tracking-wider text-blue-300">DC</span>
+                    <span class="status p-dc2 max-w-full truncate text-sm font-semibold">Libre</span>
+                </div>
+
+                <div
+                    class="case post def dd relative z-10 flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border-2 border-blue-400/70 bg-blue-950/75 p-2 text-center text-white shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-blue-500/30">
+                    <span class="pos text-xs font-black tracking-wider text-blue-300">DD</span>
+                    <span class="status p-dd max-w-full truncate text-sm font-semibold">Libre</span>
+                </div>
+                <div
+                    class="case post mid mg relative z-10 flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border-2 border-green-400/70 bg-green-950/75 p-2 text-center text-white shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-green-300 hover:shadow-green-500/30">
+                    <span class="pos text-xs font-black tracking-wider text-green-300">MG</span>
+                    <span class="status p-mg max-w-full truncate text-sm font-semibold">Libre</span>
+                </div>
+
+                <div
+                    class="case post mid mc1 relative z-10 flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border-2 border-green-400/70 bg-green-950/75 p-2 text-center text-white shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-green-300 hover:shadow-green-500/30">
+                    <span class="pos text-xs font-black tracking-wider text-green-300">MC</span>
+                    <span class="status p-mc1 max-w-full truncate text-sm font-semibold">Libre</span>
+                </div>
+
+                <div
+                    class="case post mid mc2 relative z-10 flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border-2 border-green-400/70 bg-green-950/75 p-2 text-center text-white shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-green-300 hover:shadow-green-500/30">
+                    <span class="pos text-xs font-black tracking-wider text-green-300">MC</span>
+                    <span class="status p-mc2 max-w-full truncate text-sm font-semibold">Libre</span>
+                </div>
+
+                <div
+                    class="case post mid md relative z-10 flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border-2 border-green-400/70 bg-green-950/75 p-2 text-center text-white shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-green-300 hover:shadow-green-500/30">
+                    <span class="pos text-xs font-black tracking-wider text-green-300">MD</span>
+                    <span class="status p-md max-w-full truncate text-sm font-semibold">Libre</span>
+                </div>
+
+                <div
+                    class="case post att bu1 relative z-10 flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border-2 border-red-400/70 bg-red-950/75 p-2 text-center text-white shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-red-300 hover:shadow-red-500/30">
+                    <span class="pos text-xs font-black tracking-wider text-red-300">BU</span>
+                    <span class="status p-bu1 max-w-full truncate text-sm font-semibold">Libre</span>
+                </div>
+
+                <div
+                    class="case post att bu2 relative z-10 flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border-2 border-red-400/70 bg-red-950/75 p-2 text-center text-white shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-red-300 hover:shadow-red-500/30">
+                    <span class="pos text-xs font-black tracking-wider text-red-300">BU</span>
+                    <span class="status p-bu2 max-w-full truncate text-sm font-semibold">Libre</span>
+                </div>
+
+            </section>
+        </div>
+
+        <div class="mt-5 flex flex-wrap justify-center gap-5 text-xs font-semibold text-white">
+            <span class="flex items-center gap-2">
+                <span class="h-3 w-3 rounded-full bg-amber-400"></span> Gardien
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="h-3 w-3 rounded-full bg-blue-400"></span> Défense
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="h-3 w-3 rounded-full bg-green-400"></span> Milieu
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="h-3 w-3 rounded-full bg-red-400"></span> Attaque
+            </span>
+        </div>
+
+    </div>
+
+    <div id="notification"
+        class="fixed right-3 top-3 z-[60] hidden max-w-[calc(100vw-24px)] rounded-xl border-l-4 border-green-500 bg-green-100 p-4 shadow-lg sm:right-6 sm:top-6">
+        <p id="message" class="text-green-700"></p>
+    </div>
+
+</main>
+<body>

@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <script src="script.js" defer></script> -->
+    <script type="module" src="matchs.js" defer></script>
     <link rel="stylesheet" href="/css/style.css">
     <title>Tachkila</title>
 </head>
 
 <body class="grid min-h-screen lg:grid-cols-[minmax(280px,25%)_minmax(0,1fr)] lg:grid-rows-[auto_1fr] bg-[#0e1729]">
+
 <header class="col-span-full flex flex-wrap items-center justify-between gap-4 border-b border-[#a5c4f7]/30 bg-[#202c40] px-4 py-3 sm:px-6 ">
     <div class="flex items-center gap-3">
         <div
@@ -46,4 +47,85 @@
         </div>
     </div>
 </header>
+
+<section class="col-span-full w-full px-4 py-3 sm:px-8">
+    <div class="mx-auto flex max-w-[1500px] flex-col gap-3">
+        <button id="Btn-Ajouter" class="flex h-[45px] w-full items-center justify-center rounded-[14px] bg-green-400 text-lg font-bold transition hover:bg-green-400/80 "> + Ajouter un match</button>
+        <div class="flex h-11 items-center gap-3 rounded-full border border-slate-600/50 bg-[#0c1628]/80 px-4 backdrop-blur-md transitionfocus-within:border-green-500">
+            <input id="searchPlayer" type="text" placeholder="Rechercher un joueur..." class="min-w-0 flex-1 bg-transparent text-sm text-white outline-none placeholder:text-slate-400">
+        </div>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-3 mt-4">
+        <span class="text-[11px] font-semibold uppercase tracking-widest text-slate-400"> Filtrer Matchs
+        </span>
+        <div class="flex max-w-full gap-2 overflow-x-auto">
+            <button type="button"
+                class="filter-btn shrink-0 rounded-full bg-green-600 px-4 py-2 text-xs font-semibold text-white transition">
+                Tous </button>
+            <button type="button"
+                class="filter-btn shrink-0 rounded-full border border-slate-600/60 bg-slate-800/50 px-4 py-2 text-xs font-semibold text-slate-300 transition hover:bg-slate-700">
+                A revenir </button>
+            <button type="button"
+                class="filter-btn shrink-0 rounded-full border border-slate-600/60 bg-slate-800/50 px-4 py-2 text-xs font-semibold text-slate-300 transition hover:bg-slate-700">Jouer</button>
+        </div>
+    </div>
+    </div>
+</section>
+
+<div id="modalmatch" class="fixed hidden left-1/2 top-1/2 z-50  w-[calc(100%-24px)] max-w-[640px] max-h-[90dvh] -translate-x-1/2 -translate-y-1/2 flex-col  overflow-y-auto rounded-[20px] border border-[#34445f] bg-[#1e293b] p-5 text-white shadow-2xl sm:p-8">
+    <div class="flex items-center justify-between mb-6">
+        <h2 id="title" class="text-2xl font-bold items-center"> Ajouter un joueur </h2>
+        <button id="btnClose" type="button" class="text-3xl text-slate-400 transition hover:text-white"> &times; </button>
+    </div>
+    <div class="flex flex-col gap-2 mb-3">
+        <label for="Adversaire" class="font-semibold text-slate-300"> Adversaire </label>
+        <input id="Adversaire" type="text" class="h-14 w-full rounded-xl border border-[#475569] bg-[#0f172a] px-4 text-white outline-none transition focus:border-green-500 focus:ring-green-500">
+    </div>
+    
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 mb-3">
+        <div class="flex min-w-0 flex-col gap-2">
+            <label for="date" class="font-semibold text-slate-300"> Date </label>
+            <input id="date" type="date" min="1" max="99" class="h-[52px] w-full rounded-xl border border-[#475569] bg-[#0f172a] px-4 text-white outline-none focus:border-green-500">
+        </div>
+        <div class="flex min-w-0 flex-col gap-2">
+            <label for="Heure" class="font-semibold text-slate-300">Heure</label>
+            <input id="Heure" placeholder="09:00" class="h-[52px] w-full rounded-xl border border-[#475569] bg-[#0f172a] px-4 text-white outline-none focus:border-green-500">
+        </div>
+        </div>
+        <div class="grid grid-cols-1 gap-5">
+            <div class="flex min-w-0 flex-col gap-2 mb-3">
+                <label for="Lieu" class="font-semibold text-slate-300"> Lieu </label>
+                <input id="Lieu" type="text" min="1" class="h-[52px] w-full rounded-xl  border border-[#475569 bg-[#0f172a] px-4 text-white outline-none focus:border-green-500">
+            </div>
+        </div>
+        <div class="w-full">
+            <label class="mb-3 block text-lg font-bold text-white"> Lieu du match </label>
+            <div class="flex gap-4">
+                <label class="flex flex-1 cursor-pointer items-center gap-4 rounded-xl border-2 border-slate-600 bg-[#0e1729] p-4 text-white transition hover:border-green-500">
+                    <input type="radio" name="lieu" value="Domicile" class="h-5 w-5 accent-green-500">
+                    <span class="text-lg">Domicile</span>
+                </label>
+                <label class="flex flex-1 cursor-pointer items-center gap-4 rounded-xl border-2 border-slate-600 bg-[#0e1729] p-4 text-white transition hover:border-green-500">
+                    <input type="radio" name="lieu" value="Extérieur" class="h-5 w-5 accent-green-500">
+                    <span class="text-lg">Extérieur</span>
+                </label>
+            </div>
+        </div>
+        <div class="mt-4 flex justify-end gap-3">
+            <button id="Annuler-btn" type="button"
+                class="rounded-xl border border-[#475569] bg-transparent px-5 py-3 font-semibold text-slate-300 transition hover:bg-slate-700">
+                Annuler </button>
+            <button id="save-btn" type="button"
+                class="rounded-xl bg-green-600 px-5 py-3 font-semibold text-white transition hover:bg-green-500">
+                Enregistrer</button>
+        </div>
+</div>
+<div id="notification"
+        class="fixed right-3 top-3 z-[60] hidden max-w-[calc(100vw-24px)] rounded-xl border-l-4 border-green-500 bg-green-100 p-4 shadow-lg sm:right-6 sm:top-6">
+        <p id="message" class="text-green-700"></p>
+</div>
+<section id = "Carte-Match"  class="flex w-full flex-col gap-5 px-4 py-6">>
+   lkc
+</section>
 </body>
+</html>
