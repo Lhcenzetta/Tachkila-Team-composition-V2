@@ -1,13 +1,9 @@
+import { DeleteMatch } from "./DeleteMatch.js";
 import { Match } from "./stockage.js";
-
 const sectionMatch = document.querySelector("#Carte-Match"); 
-
-
-
 export function AfficherMatchCartes(match) {
 
     const card = document.createElement("div");
-
     if (match.domicile === true)
     {
         card.className = "flex w-full flex-wrap items-center gap-5 rounded-2xl border border-emerald-400/40 border-l-4 border-l-green-400 bg-[#103b39] p-5 text-white shadow-xl transition hover:shadow-green-500/20";
@@ -31,52 +27,51 @@ export function AfficherMatchCartes(match) {
     info.className = "flex min-w-0 flex-1 flex-col gap-2";
     const lieu = document.createElement("span");
 
-    if (match.domicile === true) {
+    if (match.domicile === true)
+    {
         lieu.className = "rounded-lg bg-green px-3 py-1 text-sm font-bold text-emerald-300";
         lieu.textContent = "🏠 Domicile";
     }
-    else {
+    else
+    {
         lieu.className = "w-fit rounded-lg bg-[#0013b7]-500/20 px-3 py-1 text-sm font-bold text-red-300";
         lieu.textContent = "✈️ Extérieur";
     }
     const titre = document.createElement("h2");
     titre.className = "text-xl font-bold text-white";
 
-    if (match.domicile === true) {
+    if (match.domicile === true)
+    {
         titre.textContent = "Atlas FC vs " + match.adversaire;
     }
-    else {
+    else
+    {
         titre.textContent = match.adversaire + " vs Atlas FC";
     }
     const stade = document.createElement("p");
     stade.className = "text-sm text-slate-300";
     stade.textContent = "🏟️ " + match.lieu;
 
-    const btnEdit = document.createElement("button");
-    btnEdit.classList.add("icon-btn", "edit");
-    const imgEdit = document.createElement("img");
-    imgEdit.src = "icons/pen-to-square-regular.svg";
-    imgEdit.alt = "Modifier";
-    btnEdit.append(imgEdit);
 
+    const actions = document.createElement("div");
+    actions.className = "flex items-center gap-3";
+    const btnModifier = document.createElement("button");
+    btnModifier.textContent = "✍🏻 Modifier";
+    btnModifier.className = "rounded-lg bg-blue-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-blue-500";
     const btnDelete = document.createElement("button");
-    btnDelete.classList.add("icon-btn", "delete");
-    const imgDelete = document.createElement("img");
-    imgDelete.src = "icons/trash-can.png";
-    imgDelete.alt = "Supprimer";
-    btnDelete.append(imgDelete);
-    
+    btnDelete.textContent = "🗑️ Supprimer";
+    btnDelete.className = "rounded-lg bg-red-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-red-500";
+
+    actions.append(btnModifier, btnDelete);
     info.append(lieu, titre, stade);
-    card.append(blocDate, info);
+    card.append(blocDate, info, actions);
+    DeleteMatch(match, btnDelete,card)
 
     return card;
 }
 
-
-
-function afficherMatchs() {
+export function afficherMatchs() {
     sectionMatch.innerHTML = "";
-
     Match.forEach(match => {
         sectionMatch.append(AfficherMatchCartes(match));
     });

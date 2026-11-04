@@ -1,5 +1,8 @@
 export const save_btn = document.querySelector("#save-btn")
 export const modalmatch = document.querySelector("#modalmatch")
+export const confirmationModal = document.querySelector("#modal-confirmation")
+export const confirmedelete = document.querySelector("#confirmedelete")
+export const AnnulerConfirmation = document.querySelector("#Annuler-confirmation")
 const BtnAjouter = document.querySelector("#Btn-Ajouter")
 import { AjouterMatch } from "./natif/js/AjouteMatch.js"
 import { Match } from "./natif/js/stockage.js"

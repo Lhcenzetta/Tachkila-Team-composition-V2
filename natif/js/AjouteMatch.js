@@ -1,6 +1,7 @@
-import { Match, refresh1 } from "./stockage.js";
+import { Joueurs, Match, refresh1 } from "./stockage.js";
 import { afficherMessage, valide_input_match } from "./validation.js";
 import { modalmatch } from "../../matchs.js";
+import { AfficherMatchCartes, afficherMatchs } from "./AfficherMatchDom.js";
 export function AjouterMatch() {
     let nameComplet = document.querySelector("#Adversaire").value.trim();
     let date = document.querySelector("#date").value.trim();
@@ -22,12 +23,14 @@ export function AjouterMatch() {
                 butsAdversaire: null,
                 composition: []
               });
-          modalmatch.classList.add("hidden");
-          afficherMessage("Match a ajoute avec succes !", true);
+        modalmatch.classList.add("hidden");
+        afficherMessage("Match a ajoute avec succes !", true);
+        afficherMatchs()
   
     }
       else if (valid) {
          afficherMessage("Veuillez verifier vous donnez!", false);
-      }
+    }
+    console.log(Match)
     refresh1()
 }
