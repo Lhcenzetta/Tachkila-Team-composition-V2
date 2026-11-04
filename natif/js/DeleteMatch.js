@@ -10,6 +10,7 @@ export function DeleteMatch(match, btnDelete, card)
             if (index !== -1) {
                 Match.splice(index, 1)
                 confirmationModal.classList.add('hidden')
+                afficherMessage("le joueur a ete supprimer !!", false)
                 refresh1()
                 card.remove()
             }
