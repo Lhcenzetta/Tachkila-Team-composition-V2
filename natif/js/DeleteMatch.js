@@ -1,4 +1,4 @@
-import { Joueurs, Match, refresh1 } from "./stockage.js";
+import { Match, refresh1 } from "./stockage.js";
 import { confirmationModal, AnnulerConfirmation, confirmedelete } from "../../matchs.js";
 import { afficherMessage } from "./validation.js";
 export function DeleteMatch(match, btnDelete, card)
@@ -16,7 +16,5 @@ export function DeleteMatch(match, btnDelete, card)
             }
         })
     })
-    AnnulerConfirmation.addEventListener("click", () => {
-        confirmationModal.classList.add('hidden')
-    })
+   
 }

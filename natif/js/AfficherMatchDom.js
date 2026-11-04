@@ -1,4 +1,5 @@
 import { DeleteMatch } from "./DeleteMatch.js";
+import { ModificationMatch } from "./ModificationMatch.js";
 import { Match } from "./stockage.js";
 const sectionMatch = document.querySelector("#Carte-Match"); 
 export function AfficherMatchCartes(match) {
@@ -55,18 +56,18 @@ export function AfficherMatchCartes(match) {
 
     const actions = document.createElement("div");
     actions.className = "flex items-center gap-3";
-    const btnModifier = document.createElement("button");
-    btnModifier.textContent = "✍🏻 Modifier";
-    btnModifier.className = "rounded-lg bg-blue-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-blue-500";
+    const btnEdit = document.createElement("button");
+    btnEdit.textContent = "✍🏻 Modifier";
+    btnEdit.className = "rounded-lg bg-blue px-4 py-2 text-sm font-bold text-white transition hover:bg-blue-500";
     const btnDelete = document.createElement("button");
     btnDelete.textContent = "🗑️ Supprimer";
-    btnDelete.className = "rounded-lg bg-red-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-red-500";
+    btnDelete.className = "rounded-lg bg-red px-4 py-2 text-sm font-bold text-white transition hover:bg-red-500";
 
-    actions.append(btnModifier, btnDelete);
+    actions.append(btnEdit, btnDelete);
     info.append(lieu, titre, stade);
     card.append(blocDate, info, actions);
-    DeleteMatch(match, btnDelete,card)
-
+    DeleteMatch(match, btnDelete, card)
+    ModificationMatch(btnEdit, match)
     return card;
 }
 

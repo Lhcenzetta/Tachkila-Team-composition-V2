@@ -23,5 +23,8 @@ btnColose.addEventListener("click", () => {
 })
 save_btn.addEventListener("click", AjouterMatch)
 
-AfficherMatchCartes()
+AnnulerConfirmation.addEventListener("click", () => {
+    confirmationModal.classList.add('hidden')
+})
+
 

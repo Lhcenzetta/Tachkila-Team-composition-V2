@@ -16,9 +16,5 @@ export function DeleteJoueur(btnDelete, cardj, player) {
                 pagination()
             }
         })
-        AnnulerConfirmation.addEventListener("click", () => {
-            confirmationModal.classList.add('hidden')
-        })
-
     });
 }
