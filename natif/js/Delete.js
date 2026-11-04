@@ -1,6 +1,6 @@
-import { confirmationModal ,AnnulerConfirmation} from "../../script.js";
+import { confirmationModal, AnnulerConfirmation } from "../../effectif.js";
 import { pagination } from "./pagination.js";
-import { Joueurs } from "./stockage.js";
+import { Joueurs, refresh } from "./stockage.js";
 import { afficherMessage } from "./validation.js";
 export function DeleteJoueur(btnDelete, cardj, player) {
     btnDelete.addEventListener("click", () => {
@@ -9,12 +9,12 @@ export function DeleteJoueur(btnDelete, cardj, player) {
         confirmedelete.addEventListener("click", () => {
             if (index !== -1) {
                 Joueurs.splice(index, 1);
-                // localStorage.setItem(key, JSON.stringify(Joueurs));
                 // playerCount.textContent = Joueurs.length + " joueur(s)";
                 cardj.remove();
                 confirmationModal.classList.add('hidden')
                 afficherMessage("le joueur a ete supprimer !!", false)
-                pagination
+                refresh()
+                pagination()
             }
         })
         AnnulerConfirmation.addEventListener("click", () => {

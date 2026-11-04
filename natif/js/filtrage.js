@@ -1,5 +1,5 @@
 
-import { btns } from "../../script.js";
+import { btns } from "../../effectif.js";
 import { Joueurs } from "./stockage.js";
 import { AfficheJoueur, afficherJoueurs, JoueursDispo } from "./interface.js";
 import { pagination } from "./pagination.js";

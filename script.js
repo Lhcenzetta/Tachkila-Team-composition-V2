@@ -18,17 +18,7 @@
 // const JoueursDispo = document.querySelector("#joueur")
 // const CardJoueur = document.querySelector("#CardJoueur")
 // const save_btn = document.querySelector("#save-btn")
-// const GB = document.querySelector(".name")
-// const dg = document.querySelector(".p-dg")
-// const dc1 = document.querySelector(".p-dc1")
-// const dc2 = document.querySelector(".p-dc2")
-// const dd = document.querySelector(".p-dd")
-// const mg = document.querySelector(".p-mg")
-// const mc1 = document.querySelector(".p-mc1")
-// const mc2 = document.querySelector(".p-mc2")
-// const md = document.querySelector(".p-md")
-// const bu1 = document.querySelector(".p-bu1")
-// const bu2 = document.querySelector(".p-bu2")
+
 // const playerCount = document.querySelector("#playerCount")
 
 
@@ -343,56 +333,9 @@
 //     return valid;
 // }
 
-
-
-
-
-
 // refresh()
 // AffichierAssingPlayer()
 // afficherJoueurs();
 // playerCount.textContent = Joueurs.length + " joueur(s)" 
 
-
-
-
-import { AjouterJoueur } from "./natif/js/ajouter.js";
-import { pagination } from "./natif/js/pagination.js";
-import { searchPlayer } from "./natif/js/search_joueurs.js";
-import { filter } from "./natif/js/filtrage.js";
-import { Joueurs, refresh } from "./natif/js/stockage.js";
-const btn = document.querySelector("#Btn-Ajouter");
-const btnColose = document.querySelector("#btnClose");
-const annulerbtn = document.querySelector("#Annuler-btn")
-export const save_btn = document.querySelector("#save-btn")
-export const btns = document.querySelectorAll(".filter-btn")
-export const searchplayer = document.querySelector("#searchPlayer")
-export const pagenumbers = document.getElementById("pageNumbers");
-export const confirmationModal = document.querySelector("#modal-confirmation")
-export const confirmedelete = document.querySelector("#confirmedelete")
-export const AnnulerConfirmation = document.querySelector("#Annuler-confirmation")
-pagination()
-
-btn.addEventListener("click", () => {
-    const title = document.querySelector("#title")
-    title.textContent = "Ajouter le Joueur"
-    modaljoueur.classList.toggle("openclose");
-})
-
-
-save_btn.addEventListener("click", AjouterJoueur)
-
-
-btnColose.addEventListener("click", () => {
-    modaljoueur.classList.toggle("openclose");
-})
-
-annulerbtn.addEventListener("click", () => {
-    modaljoueur.classList.remove("openclose")
-})
-
-
-searchplayer.addEventListener("input", searchPlayer)
-
-filter()
 

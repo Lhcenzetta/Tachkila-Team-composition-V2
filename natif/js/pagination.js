@@ -1,10 +1,16 @@
 
 let pageactuel = 1;
 const jouerupage = 8;
-import {pagenumbers } from "../../script.js";
+import { pagenumbers } from "../../effectif.js";
 export function pagination() {
     const cartes = document.querySelectorAll("#joueur > div");
     const totalpages = Math.max(1, Math.ceil(cartes.length / jouerupage));
+
+    // const pagenumbers = document.getElementById("pageNumbers");
+
+    if (!pagenumbers) {
+        return;
+    }
     if (pageactuel > totalpages) {
         pageactuel = totalpages;
     }
@@ -34,11 +40,20 @@ export function pagination() {
     document.getElementById("prevPage").disabled = pageactuel === 1;
     document.getElementById("nextPage").disabled = pageactuel === totalpages;
 }
-document.getElementById("nextPage").onclick = () => {
-    pageactuel++;
-    pagination();
-};
-document.getElementById("prevPage").onclick = () => {
-    pageactuel--;
-    pagination();
-};
+const nextPage = document.getElementById("nextPage");
+const prevPage = document.getElementById("prevPage");
+
+
+if (nextPage && prevPage) {
+
+    nextPage.onclick = () => {
+        pageactuel++;
+        pagination();
+    };
+
+    prevPage.onclick = () => {
+        pageactuel--;
+        pagination();
+    };
+
+}

@@ -1,6 +1,7 @@
 export const JoueursDispo = document.querySelector("#joueur")
 import { DeleteJoueur } from "./Delete.js";
 import { Joueurs, posts } from "./stockage.js";
+import { AssingeCapitan } from "./AssingeCapitan.js";
 import { modifierJouer } from "./Modifier.js";
 const pageNumbers = document.querySelector("#pageNumbers");
 
@@ -76,7 +77,7 @@ export function AfficheJoueur(player) {
     btnCaptain.type = "button";
     btnCaptain.classList.add("captain-btn");
     btnCaptain.textContent = "C";
-    if (player.capitaine) {
+    if (player.capitan == true) {
         btnCaptain.classList.add("active");
         const badge = document.createElement("span");
         badge.classList.add("captain-badge");
@@ -92,6 +93,7 @@ export function AfficheJoueur(player) {
     cardj.append(playertop, age, bottom);
     DeleteJoueur(btnDelete, cardj, player);
     modifierJouer(btnEdit, player);
+    AssingeCapitan(btnCaptain,player)
 
     return cardj;
 }
