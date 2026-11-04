@@ -1,7 +1,13 @@
 import { DeleteMatch } from "./DeleteMatch.js";
 import { ModificationMatch } from "./ModificationMatch.js";
-import { Match } from "./stockage.js";
+import { Match, refresh1 } from "./stockage.js";
+import { afficherMessage } from "./validation.js";
 const sectionMatch = document.querySelector("#Carte-Match"); 
+const btnScore = document.querySelector("#btnScore");
+const formScore = document.querySelector("#formScore");
+const btn_score = document.querySelector("#btnEnregistrerScore")
+
+
 export function AfficherMatchCartes(match) {
 
     const card = document.createElement("div");
@@ -63,11 +69,64 @@ export function AfficherMatchCartes(match) {
     btnDelete.textContent = "🗑️ Supprimer";
     btnDelete.className = "rounded-lg bg-red px-4 py-2 text-sm font-bold text-white transition hover:bg-red-500";
 
+    const status_match = document.createElement("div");
+    const Heure = match.Heure ?? match.heure;
+
+    const dateMatch = new Date(match.date + "T" + Heure);
+    const estPassee = !isNaN(dateMatch.getTime()) && dateMatch.getTime() <= Date.now();
+    if (estPassee && !isNaN(dateMatch.getTime())) {
+        const btnScore = document.createElement("button");
+        btnScore.textContent = "⚽ Saisir le score";
+        btnScore.className = "rounded-lg bg-blue-600 px-4 py-2 text-white font-bold hover:bg-blue-500";
+        btnScore.addEventListener("click", () => {
+            formScore.classList.remove("hidden")
+            btn_score.addEventListener("click", () => {
+                const scoreNous = document.querySelector("#scoreNous").value;
+                const scoreAdversaire = document.querySelector("#scoreAdversaire").value;
+                match.scoreNous = Number(scoreNous);
+                match.scoreAdversaire = Number(scoreAdversaire);
+                afficherMessage("Score enregistré !", true);
+                formScore.classList.add("hidden")
+                btnScore.textContent = match.scoreNous != null ? "✏️ Modifier le score" : "⚽ Saisir le score";
+                refresh1()
+                afficherMatchs();
+            })
+
+        });
+        status_match.append(btnScore);
+    }
+    const resultat = document.createElement("div");
+    resultat.className = "text-center text-xl font-bold";
+    if (match.scoreNous == null || match.scoreAdversaire == null) {
+        resultat.textContent = "À venir";
+        resultat.classList.add("text-gray-400");
+    }
+    else {
+        if (match.domicile === true) {
+            resultat.textContent = match.scoreNous + " - " + match.scoreAdversaire;
+        }
+        else {
+            resultat.textContent = match.scoreAdversaire + " - " + match.scoreNous;
+        }
+        if (match.scoreNous > match.scoreAdversaire) {
+            resultat.textContent += " | Victoire";
+            resultat.classList.add("text-green-400");
+        }
+        else if (match.scoreNous < match.scoreAdversaire) {
+            resultat.textContent += " | Défaite";
+            resultat.classList.add("text-red-400");
+        }
+        else {
+            resultat.textContent += " | Match nul";
+            resultat.classList.add("text-yellow-400");
+        }
+    }
     actions.append(btnEdit, btnDelete);
     info.append(lieu, titre, stade);
-    card.append(blocDate, info, actions);
+    card.append(blocDate,info,resultat,status_match , actions);
     DeleteMatch(match, btnDelete, card)
     ModificationMatch(btnEdit, match)
+    
     return card;
 }
 
