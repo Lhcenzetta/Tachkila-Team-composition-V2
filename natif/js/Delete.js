@@ -9,7 +9,6 @@ export function DeleteJoueur(btnDelete, cardj, player) {
         confirmedelete.addEventListener("click", () => {
             if (index !== -1) {
                 Joueurs.splice(index, 1);
-                // playerCount.textContent = Joueurs.length + " joueur(s)";
                 cardj.remove();
                 confirmationModal.classList.add('hidden')
                 afficherMessage("le joueur a ete supprimer !!", false)
@@ -17,9 +16,5 @@ export function DeleteJoueur(btnDelete, cardj, player) {
                 pagination()
             }
         })
-        AnnulerConfirmation.addEventListener("click", () => {
-            confirmationModal.classList.add('hidden')
-        })
-
     });
 }

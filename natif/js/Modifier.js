@@ -30,7 +30,6 @@ export function modifierJouer(btnEdit, player) {
 
         save_btn.removeEventListener("click", AjouterJoueur);
 
-        console.log(age.value, statut.value, selectedPost.value, number.value, name.value)
         save_btn.onclick = () => {
             let newName = name.value.trim();
             let newNumber = number.value;
@@ -44,7 +43,6 @@ export function modifierJouer(btnEdit, player) {
                 Joueurs[index].position = newPost;
                 Joueurs[index].age = newAge;
                 Joueurs[index].statut = newStatut
-                // localStorage.setItem(key, JSON.stringify(Joueurs));
                 afficherJoueurs()
                 afficherMessage("success modified", true)
                 modaljoueur.classList.remove("openclose");
