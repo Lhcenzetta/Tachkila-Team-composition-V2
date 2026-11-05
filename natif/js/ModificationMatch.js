@@ -19,8 +19,8 @@ export function ModificationMatch(btnEdit, match) {
         title.textContent = "Modifier le match";
         document.querySelector("#Adversaire").value = Match[index].adversaire;
         document.querySelector("#date").value = Match[index].date;
-        document.querySelector("#Heure").value = Match[index].Heure
-        document.querySelector("#Lieu").value = Match[index].Lieu;
+        document.querySelector("#Heure").value = Match[index].heure
+        document.querySelector("#Lieu").value = Match[index].lieu
         const radios = document.querySelectorAll('input[name="lieu"]');
         radios.forEach(radio => {
             if (Match[index].domicile === true) {

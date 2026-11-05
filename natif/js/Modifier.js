@@ -30,7 +30,6 @@ export function modifierJouer(btnEdit, player) {
 
         save_btn.removeEventListener("click", AjouterJoueur);
 
-        // console.log(age.value, statut.value, selectedPost.value, number.value, name.value)
         save_btn.onclick = () => {
             let newName = name.value.trim();
             let newNumber = number.value;

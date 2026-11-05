@@ -2,6 +2,7 @@ import { Joueurs, Match, refresh1 } from "./stockage.js";
 import { afficherMessage, valide_input_match } from "./validation.js";
 import { modalmatch } from "../../matchs.js";
 import { AfficherMatchCartes, afficherMatchs } from "./AfficherMatchDom.js";
+const sectionMatch = document.querySelector("#Carte-Match"); 
 export function AjouterMatch() {
     let nameComplet = document.querySelector("#Adversaire").value.trim();
     let date = document.querySelector("#date").value.trim();
@@ -33,4 +34,9 @@ export function AjouterMatch() {
     }
     console.log(Match)
     refresh1()
+    document.querySelector("#Adversaire").value = "";
+    document.querySelector("#date").value = "";
+    document.querySelector("#Heure").value = "";
+    document.querySelector("#Lieu").value = "";
+    document.querySelector('input[name="lieu"]:checked') = ""
 }

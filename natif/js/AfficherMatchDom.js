@@ -3,7 +3,6 @@ import { ModificationMatch } from "./ModificationMatch.js";
 import { Match, refresh1 } from "./stockage.js";
 import { afficherMessage } from "./validation.js";
 const sectionMatch = document.querySelector("#Carte-Match"); 
-const btnScore = document.querySelector("#btnScore");
 const formScore = document.querySelector("#formScore");
 const btn_score = document.querySelector("#btnEnregistrerScore")
 
