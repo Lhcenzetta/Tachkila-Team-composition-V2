@@ -75,18 +75,18 @@ export function AfficherMatchCartes(match) {
     const estPassee = !isNaN(dateMatch.getTime()) && dateMatch.getTime() <= Date.now();
     if (estPassee && !isNaN(dateMatch.getTime())) {
         const btnScore = document.createElement("button");
-        btnScore.textContent = "⚽ Saisir le score";
+        btnScore.textContent = match.butsAtlas !== null ? "✏️ Modifier le score" : "⚽ Saisir le score";
         btnScore.className = "rounded-lg bg-blue-600 px-4 py-2 text-white font-bold hover:bg-blue-500";
         btnScore.addEventListener("click", () => {
             formScore.classList.remove("hidden")
             btn_score.addEventListener("click", () => {
                 const scoreNous = document.querySelector("#scoreNous").value;
                 const scoreAdversaire = document.querySelector("#scoreAdversaire").value;
-                match.scoreNous = Number(scoreNous);
-                match.scoreAdversaire = Number(scoreAdversaire);
+                match.butsAtlas = Number(scoreNous);
+                match.butsAdversaire = Number(scoreAdversaire);
                 afficherMessage("Score enregistré !", true);
                 formScore.classList.add("hidden")
-                btnScore.textContent = match.scoreNous != null ? "✏️ Modifier le score" : "⚽ Saisir le score";
+                
                 refresh1()
                 afficherMatchs();
             })
@@ -96,22 +96,23 @@ export function AfficherMatchCartes(match) {
     }
     const resultat = document.createElement("div");
     resultat.className = "text-center text-xl font-bold";
-    if (match.scoreNous == null || match.scoreAdversaire == null) {
+    if (match.butsAtlas == null || match.butsAdversaire == null) {
         resultat.textContent = "À venir";
         resultat.classList.add("text-gray-400");
     }
     else {
+        
         if (match.domicile === true) {
-            resultat.textContent = match.scoreNous + " - " + match.scoreAdversaire;
+            resultat.textContent = match.butsAtlas + " - " + match.butsAdversaire;
         }
         else {
-            resultat.textContent = match.scoreAdversaire + " - " + match.scoreNous;
+            resultat.textContent = match.butsAdversaire + " - " + match.butsAtlas;
         }
-        if (match.scoreNous > match.scoreAdversaire) {
+        if (match.butsAtlas > match.butsAdversaire) {
             resultat.textContent += " | Victoire";
             resultat.classList.add("text-green-400");
         }
-        else if (match.scoreNous < match.scoreAdversaire) {
+        else if (match.butsAtlas < match.scoreAdversaire) {
             resultat.textContent += " | Défaite";
             resultat.classList.add("text-red-400");
         }

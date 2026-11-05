@@ -8,6 +8,7 @@ import { AjouterMatch } from "./natif/js/AjouteMatch.js"
 import { Match } from "./natif/js/stockage.js"
 import {afficherMatchs} from "./natif/js/AfficherMatchDom.js"
 import { SearchMatch } from "./natif/js/search_match.js"
+import { filter_match } from "./natif/js/filter_match.js"
 const annulerbtn = document.querySelector("#Annuler-btn")
 const btnColose = document.querySelector("#btnClose");
 
@@ -29,3 +30,4 @@ AnnulerConfirmation.addEventListener("click", () => {
 })
 afficherMatchs()
 SearchMatch("")
+filter_match()
