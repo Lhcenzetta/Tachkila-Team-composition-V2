@@ -10,7 +10,7 @@ function searcheinarray(value) {
     JoueursDispo.textContent = ""
     console.log(value)
     Joueurs.forEach((joueur) => {
-        if (joueur.nom.startsWith(value)) {
+        if (joueur.nom.includes(value)) {
             JoueursDispo.append(AfficheJoueur(joueur))
             filter()
             pagination()

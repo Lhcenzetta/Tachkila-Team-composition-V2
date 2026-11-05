@@ -43,7 +43,6 @@ export function modifierJouer(btnEdit, player) {
                 Joueurs[index].position = newPost;
                 Joueurs[index].age = newAge;
                 Joueurs[index].statut = newStatut
-                // localStorage.setItem(key, JSON.stringify(Joueurs));
                 afficherJoueurs()
                 afficherMessage("success modified", true)
                 modaljoueur.classList.remove("openclose");
