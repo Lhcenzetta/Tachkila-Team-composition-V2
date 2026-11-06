@@ -11,10 +11,16 @@ export function AjouterJoueur() {
     let selectedPost = document.querySelector("#postplayer").value;
     let age = document.querySelector("#ageplayer").value;
     let statut = document.querySelector("#statusplayer").value;
-
-
-    const valid = valide_input_name(name, number, age , true);
-
+    let count = 0
+    Joueurs.forEach(j => {
+        if (j.position === "Gardien") count += 1
+    });
+    console.log(count)
+    const valid = valide_input_name(name, number, age, true);
+    if (count > 2) {
+        afficherMessage("Les gardiens ne doit pas passer 2 joueur", false);
+        return;
+    }
     if (valid && selectedPost) {
         Joueurs.push(
             {

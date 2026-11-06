@@ -1,4 +1,5 @@
 import { AfficheJoueur, afficherJoueurs } from "./interface.js"
+import { pagination } from "./pagination.js"
 import { Joueurs ,refresh} from "./stockage.js"
 
 export function AssingeCapitan(btnCaptain, player) {
@@ -14,5 +15,6 @@ export function AssingeCapitan(btnCaptain, player) {
         })
         afficherJoueurs()
         refresh()
+        pagination()
     })
 }
