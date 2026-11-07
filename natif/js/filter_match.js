@@ -36,18 +36,6 @@ export function filter_match() {
                     }
                 })
             }
-            btns.forEach(b => {
-                const texte = b.textContent.trim();
-                if (positions.includes(texte) || (texte === "Tous" && positions.length === 0))
-                {
-                    b.classList.add("bg-green-600", "text-white");
-                    b.classList.remove("bg-slate-800/50", "text-slate-300");
-                }
-                else {
-                    b.classList.remove("bg-green-600", "text-white");
-                    b.classList.add("bg-slate-800/50", "text-slate-300");
-                }
-            });
         })
         SearchMatch("")
     })

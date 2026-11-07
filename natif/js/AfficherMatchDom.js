@@ -18,17 +18,34 @@ export function AfficherMatchCartes(match) {
     {
         card.className = "flex w-full flex-wrap items-center gap-5 rounded-2xl border border-violet-400/40 border-l-4 border-l-blue-400 bg-[#0013b7] p-5 text-white shadow-xl transition hover:shadow-blue-500/20";
     }
-    const blocDate = document.createElement("div");
-    blocDate.className = "flex w-50 shrink-0 flex-col items-center justify-center rounded-xl border border-white/10 bg-[#4c4c54] p-4";
 
-    const date = document.createElement("p");
-    date.className = "text-sm font-bold text-white";
-    date.textContent = match.date;
+    const dataobj = new Date(match.date);
+    const daysOfWeek = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+    const months = ["JAN", "FEV", "MAR", "AVR", "MAI", "JUI", "JUI", "AOU", "SEP", "OCT", "NOV", "DEC"]
+
+    const dayweek  = daysOfWeek[dataobj.getDay()];
+    const daynumbers = dataobj.getDate();
+    const month = months[dataobj.getMonth()];
+
+    const dayname = document.createElement("p");
+    dayname.className = "text-xs font-bold uppercase tracking-wider text-slate-400";
+    dayname.textContent = dayweek;
+
+    const daynumber = document.createElement("p");
+    daynumber.className = "text-2xl font-black leading-tight text-white";
+    daynumber.textContent = daynumbers;
+
+    const monthname = document.createElement("p");
+    monthname.className = "text-xs font-bold uppercase tracking-wider text-slate-400";
+    monthname.textContent = month;
+
+    const divdate = document.createElement("div");
+    divdate.className = "flex w-50 shrink-0 flex-col items-center justify-center rounded-xl border border-white/10 bg-[#73468c] p-4";
 
     const heure = document.createElement("p");
     heure.className = "mt-2 text-sm text-slate-400";
     heure.textContent = match.heure;
-    blocDate.append(date, heure);
+    divdate.append(heure , monthname ,dayname , dayname);
     const info = document.createElement("div");
     info.className = "flex min-w-0 flex-1 flex-col gap-2";
     const lieu = document.createElement("span");
@@ -123,7 +140,7 @@ export function AfficherMatchCartes(match) {
     }
     actions.append(btnEdit, btnDelete);
     info.append(lieu, titre, stade);
-    card.append(blocDate,info,resultat,status_match , actions);
+    card.append(divdate,info,resultat,status_match , actions);
     DeleteMatch(match, btnDelete, card)
     ModificationMatch(btnEdit, match)
     
