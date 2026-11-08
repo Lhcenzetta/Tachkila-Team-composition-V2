@@ -31,6 +31,8 @@ annulerbtn.addEventListener("click", () => {
     modaljoueur.classList.remove("openclose")
 })
 searchplayer.addEventListener("input", searchPlayer)
-
+AnnulerConfirmation.addEventListener("click", () => {
+    confirmationModal.classList.add("hidden")
+})
 filter()
 statistique()
