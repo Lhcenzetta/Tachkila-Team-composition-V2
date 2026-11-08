@@ -2,6 +2,7 @@ import { AjouterJoueur } from "./natif/js/ajouter.js";
 import { pagination } from "./natif/js/pagination.js";
 import { searchPlayer } from "./natif/js/search_joueurs.js";
 import { filter } from "./natif/js/filtrage.js";
+import { statistique } from  "./natif/js/statistique_Joueur.js";
 const btn = document.querySelector("#Btn-Ajouter");
 const btnColose = document.querySelector("#btnClose");
 const annulerbtn = document.querySelector("#Annuler-btn")
@@ -29,7 +30,7 @@ btnColose.addEventListener("click", () => {
 annulerbtn.addEventListener("click", () => {
     modaljoueur.classList.remove("openclose")
 })
-
 searchplayer.addEventListener("input", searchPlayer)
 
 filter()
+statistique()

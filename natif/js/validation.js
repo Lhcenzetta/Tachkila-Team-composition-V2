@@ -26,9 +26,13 @@ export function afficherMessage(texte, success) {
 }
 
 
-export function valide_input_name(name, number, age, check_in) {
+export function valide_input_name(name, number, age, selectedPost ,check_in) {
     let valid = true;
-
+    let count = 0
+    Joueurs.forEach(j => {
+        if (j.position === "Gardien") count += 1
+    });
+    console.log(count)
     if (name === "") {
         afficherMessage("Le nom est obligatoire !", false);
         valid = false;
@@ -49,7 +53,11 @@ export function valide_input_name(name, number, age, check_in) {
         afficherMessage("Ce numéro est deja utilise par un joueur !", false);
         valid = false;
     }
-
+    else if (selectedPost === "Gardien" && count > 2)
+    {
+        afficherMessage("l'equipe accepte seulement 2 joueur gardiens", false)
+        valid = false
+    }
     return valid;
 }
 

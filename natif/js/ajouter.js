@@ -2,6 +2,7 @@ import { valide_input_name, afficherMessage } from "./validation.js";
 import { Joueurs , refresh } from "./stockage.js";
 import { afficherJoueurs } from "./interface.js";
 import { pagination } from "./pagination.js";
+import { statistique } from "./statistique_Joueur.js";
 const modaljoueur = document.querySelector("#modaljoueur")
 const playerCount = document.querySelector("#playerCount")
 const key = "my_data"
@@ -11,16 +12,8 @@ export function AjouterJoueur() {
     let selectedPost = document.querySelector("#postplayer").value;
     let age = document.querySelector("#ageplayer").value;
     let statut = document.querySelector("#statusplayer").value;
-    let count = 0
-    Joueurs.forEach(j => {
-        if (j.position === "Gardien") count += 1
-    });
-    console.log(count)
-    const valid = valide_input_name(name, number, age, true);
-    if (count > 2) {
-        afficherMessage("Les gardiens ne doit pas passer 2 joueur", false);
-        return;
-    }
+    console.log(selectedPost)
+    const valid = valide_input_name(name, number, age,  selectedPost, true );
     if (valid && selectedPost) {
         Joueurs.push(
             {
@@ -39,10 +32,10 @@ export function AjouterJoueur() {
 
     }
     else if (valid && !selectedPost) {
-       afficherMessage("Veuillez selectionner une position !", false);
+        afficherMessage("Veuillez selectionner une position !", false);
+        
     }
     refresh()
     pagination()
-    // playerCount.textContent = Joueurs.length + " joueur(s)"
-  
+    statistique()
 }
