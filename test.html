@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>pagination</title>
+    <style>
+        #joueur{
+            display: flex;
+            gap: 20px;
+        }
+        #joueur div{
+           width: 200px;
+           height: 200px;
+           background-color: aquamarine; 
+        }
+    </style>
+</head>
+<body>
+    <div id="joueur">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+        <div>Item 7</div>
+        <div>Item 8</div>
+        <div>Item 9</div>
+        <div>Item 10</div>
+    </div>
+    <div class="flex items-center gap-4 mt-4">
+        <button id="prevPage" class="px-3 py-1 bg-slate-700 text-white rounded">Précédent</button>
+        <span id="pageInfo" class=""></span>
+        <div id="pagenumbers" class="flex gap-2"></div>
+        <button id="nextPage" class="px-3 py-1 bg-slate-700 text-white rounded">Suivant</button>
+    </div>
+<script>
+    const nextPage = document.getElementById("nextPage");
+    const prevPage = document.getElementById("prevPage");
+    const pageInfo = document.getElementById("pageInfo")
+    let pageactuel = 1
+    const cartepage = 4
+    const pagenumbers = document.getElementById("pagenumbers");
+    const cartes = document.querySelectorAll("#joueur > div")
+    function pagination() {
+        const totalpage = Math.max(1, Math.ceil(cartes.length / cartepage))
+        cartes.forEach((carte , index) => {
+            const debut = (pageactuel - 1) * cartepage
+            const fin = debut + cartepage
+            if (index >= debut && index < fin) carte.style.display = ""
+            else carte.style.display = "none"
+        })
+
+        pagenumbers.innerHTML = ""
+        for(let i = 1 ; i <= totalpage ; i++){
+            const btn = document.createElement("button")
+            btn.textContent = i
+            btn.className = i === pageactuel ? "px-4 py-2 bg-green-600 text-white rounded-lg" : "px-4 py-2 bg-slate-800 text-white rounded-lg";
+            btn.addEventListener ( "click" , () => {
+                pageactuel = i
+                pagination()
+            })
+            pagenumbers.append(btn)
+        }
+        pageInfo.textContent = "Page" + pageactuel+ "/"+ totalpage
+        prevPage.disabled = pageactuel === 1
+        nextPage.disabled = pageactuel === totalpage
+    }
+    if (nextPage && prevPage) {
+        nextPage.addEventListener("click" , () => {
+            pageactuel++
+            pagination()
+        })
+        prevPage.addEventListener("click", () => {
+            pageactuel--;
+            pagination()
+        })
+    }
+    pagination();
+</script>
+</body>
+</html>

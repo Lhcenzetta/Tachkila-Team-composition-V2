@@ -12,7 +12,7 @@ export function pagination() {
         pageactuel = totalpages;
     }
     cartes.forEach((carte, index) => {
-        const debut = (pageactuel - 1) * jouerupage; //0
+        const debut = (pageactuel - 1) * jouerupage; 
         const fin = debut + jouerupage;
         if (index >= debut && index < fin) {
             carte.style.display = "";
@@ -33,7 +33,7 @@ export function pagination() {
         });
         pagenumbers.append(btn);
     }
-    pageInfo.textContent = `Page ${pageactuel} / ${totalpages}`;
+    pageInfo.textContent = "Page" + pageactuel +"/"+ totalpages;
     prevPage.disabled = pageactuel === 1;
     nextPage.disabled = pageactuel === totalpages;
 }
