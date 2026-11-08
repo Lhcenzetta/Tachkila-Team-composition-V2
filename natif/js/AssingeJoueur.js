@@ -28,6 +28,7 @@ export function AssingeJeur(player, playerselect)
         playerselect.value = ancpost;
         return;
     }
+    
     let valide = false;
         if (nvpost === "Sur le banc") {
             valide = true;
@@ -56,8 +57,8 @@ export function AssingeJeur(player, playerselect)
             afficherMessage("le joueure a ete assigner avec success", true);
             Joueurs[index].poste = nvpost;
             refresh()
+            DisablePoste();
         }
-    console.log(Joueurs)
     AffichierAssingPlayer();
 }
 
@@ -73,6 +74,7 @@ export function AffichierAssingPlayer() {
     md.textContent = "Libre";
     bu1.textContent = "Libre";
     bu2.textContent = "Libre";
+
     for (let i = 0; i < Joueurs.length; i++) {
 
         if (Joueurs[i].position === "Gardien") {
@@ -121,4 +123,3 @@ export function AffichierAssingPlayer() {
     }
 }
 
-console.log(Joueurs)

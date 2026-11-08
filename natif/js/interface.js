@@ -104,15 +104,3 @@ export function afficherJoueurs() {
     });
 }
 afficherJoueurs()
-
-
-// btnCaptain.addEventListener("click", () => {
-
-//     const nouveauCapitaine = !player.capitaine;
-
-//     Joueurs.forEach(j => {
-//         j.capitaine = nouveauCapitaine && j.id === player.id;
-//     });
-//     localStorage.setItem(key, JSON.stringify(Joueurs));
-//     afficherJoueurs();
-// });

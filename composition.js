@@ -60,6 +60,7 @@ function CarteComposition(player) {
 
     const select = document.createElement("select");
     select.classList.add("comp-select");
+    select.dataset.playerId = player.id;
 
     if (player.statut === "Blessé")
     {
@@ -90,7 +91,8 @@ function CarteComposition(player) {
         select.value = player.poste;
         select.value = player.poste || "Sur le banc";
         select.addEventListener("change", () => {
-             AssingeJeur(player,select)
+            AssingeJeur(player, select)
+            DisablePoste();
         }) 
         refresh();
     }
@@ -111,5 +113,22 @@ function afficherJoueurs() {
         Joueurs.length;
 }
 
+function DisablePoste() {
+    const selects = document.querySelectorAll(".comp-select");
+
+    selects.forEach(select => {
+        const playerId = select.dataset.playerId;
+
+        select.querySelectorAll("option").forEach(option => {
+            option.disabled = Joueurs.some(j =>
+                j.id != playerId &&
+                j.poste === option.value &&
+                option.value !== "Sur le banc"
+            );
+        });
+    });
+}
+
 afficherJoueurs();
+DisablePoste();
 AffichierAssingPlayer() 
